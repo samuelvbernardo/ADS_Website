@@ -1,209 +1,70 @@
-:root {
-    --primary-color: #000c49;
-    --secondary-color: #ee7d14;
-    --background-color: #f4f4f9;
-    --text-color: #333;
-    --border-radius: 8px;
-    --transition-fast: 0.3s ease-in-out;
-}
-
-/* =========================== Global Styles =============================== */
-body {
-    font-family: 'Inter', sans-serif;
+.text-primary {
+    color: #000c49 !important;
+  }
+  
+  .text-secondary {
+    color: #ee7d14 !important;
+  }
+  
+  .border-primary {
+    border-color: #000c49 !important;
+  }
+  
+  body {
+    font-family: inter;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-.text-primary { color: var(--primary-color) !important; }
-.text-secondary { color: var(--secondary-color) !important; font-weight: bold; }
-
-.border-primary {
-    border: 2px solid var(--primary-color);
-    border-radius: var(--border-radius);
-}
-
-.logo {
-    max-height: 2.5rem;
-    transition: transform var(--transition-fast);
-}
-
-.logo:hover { transform: scale(1.15); }
-
-/* =========================== Buttons =============================== */
-.btn-gray {
+  }
+  
+  .logo {
+    max-height: 2.2rem;
+  }
+  
+  .btn-gray {
     background-color: #eeeeee;
-    transition: background-color var(--transition-fast), transform var(--transition-fast);
-    border-radius: 6px;
-}
-
-.btn-gray:hover { background-color: #d6d6d6; transform: scale(1.05); }
-
-.btn-white-bg-orange {
-    transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-    border-radius: 6px;
-    padding: 10px 16px;
-}
-
-.btn-white-bg-orange:hover {
-    color: #fff;
-    background-color: var(--secondary-color);
-    transform: scale(1.08);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Redes sociais */
-.btn-facebook:hover { color: #3b5998; }
-.btn-twitter-x:hover { color: #3b3434; }
-.btn-instagram:hover { color: #e4405f; }
-.btn-youtube:hover { color: #cd201f; }
-.btn-discord:hover { color: #7289da; }
-
-.btn-facebook:hover,
-.btn-twitter-x:hover,
-.btn-instagram:hover,
-.btn-youtube:hover,
-.btn-discord:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: var(--transition-fast);
-}
-
-/* =========================== Navbar & Links =============================== */
-.navbar-list-orange li a,
-.links-list-orange li {
-    transition: color var(--transition-fast), transform var(--transition-fast);
-}
-
-.navbar-list-orange li a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.links-list-orange li:hover {
+  }
+  
+  .navbar-list-orange li a:hover {
+    color: #ee7d14;
+  }
+  
+  .links-list-orange li {
+    transition: transform 0.3s;
+  }
+  
+  .links-list-orange li:hover {
     transform: translateX(5px);
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-/* =========================== Projects Cards =============================== */
-.projects-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.project-card {
-    background: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 350px;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.project-card img { width: 100%; height: auto; }
-
-.project-card .card-content { padding: 15px; }
-
-.project-card h3 {
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.project-card a {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color var(--transition-fast);
-}
-
-.project-card a:hover { background-color: #cc6600; }
-
-/* =========================== Container =============================== */
-.container {
-    display: flex;
-    margin-top: 2rem;
-    padding: 2rem;
-}
-
-.container-left {
-    flex: 4;
-    padding: 0 2rem 2rem;
-}
-
-.projects header {
-    color: var(--primary-color);
-    font-size: 4rem;
-    padding: 1rem;
-    text-align: left;
-}
-
-.projects .banner {
-    background-color: #fff;
-    padding: 2rem;
-    text-align: center;
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow);
-}
-
-.projects .banner h2 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.projects .banner p {
-    color: #666;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.projects .filter-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    background-color: #fff;
-    padding: 1.3rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--box-shadow);
-}
-
-.projects .filter-section label {
-    font-size: 1.2rem;
-}
-
-.projects .filter-section select,
-.projects .filter-section input {
-    padding: 0.8rem;
-    border-radius: var(--border-radius);
-    border: 0.1rem solid #e0e0e0;
-    width: 100%;
-}
-
-.projects .filter-section select:hover,
-.projects .filter-section input:hover {
-    border-color: var(--secondary-color);
-}
+    color: #ee7d14;
+  }
+  
+  .btn-facebook:hover {
+    color: #3b5998;
+    cursor: pointer;
+  }
+  .btn-twitter-x:hover {
+    color: #3b3434;
+    cursor: pointer;
+  }
+  .btn-instagram:hover {
+    color: #e4405f;
+    cursor: pointer;
+  }
+  .btn-youtube:hover {
+    color: #cd201f;
+    cursor: pointer;
+  }
+  .btn-discord:hover {
+    color: #7289da;
+    cursor: pointer;
+  }
+  
+  .btn-white-bg-orange:hover {
+    color: #fff;
+    background-color: #ee7d14;
+  }
+    
+  .btn-list-white-bg-orange li:hover {
+    color: #fff;
+    background-color: #ee7d14;
+  }
+  
