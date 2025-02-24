@@ -1,0 +1,142 @@
+/* Estilos gerais */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.text-primary {
+    color: #000c49 !important;
+}
+
+.text-secondary {
+    color: #ee7d14 !important;
+    font-weight: bold;
+}
+
+.border-primary {
+    border-color: #000c49 !important;
+    border-width: 2px;
+    border-radius: 8px;
+}
+
+.logo {
+    max-height: 2.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+}
+
+.btn-gray {
+    background-color: #eeeeee;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 6px;
+}
+
+.btn-gray:hover {
+    background-color: #d6d6d6;
+    transform: scale(1.05);
+}
+
+.navbar-list-orange li a {
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-list-orange li a:hover {
+    color: #ee7d14;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.links-list-orange li {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.links-list-orange li:hover {
+    transform: translateX(5px);
+    color: #ee7d14;
+    font-weight: bold;
+}
+
+.btn-facebook:hover,
+.btn-twitter-x:hover,
+.btn-instagram:hover,
+.btn-youtube:hover,
+.btn-discord:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-facebook:hover { color: #3b5998; }
+.btn-twitter-x:hover { color: #3b3434; }
+.btn-instagram:hover { color: #e4405f; }
+.btn-youtube:hover { color: #cd201f; }
+.btn-discord:hover { color: #7289da; }
+
+.btn-white-bg-orange {
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    border-radius: 6px;
+    padding: 10px 16px;
+}
+
+.btn-white-bg-orange:hover {
+    color: #fff;
+    background-color: #ee7d14;
+    transform: scale(1.08);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-list-white-bg-orange li {
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.btn-list-white-bg-orange li:hover {
+    color: #fff;
+    background-color: #ee7d14;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para os botões REQUERIMENTOS e EVENTOS */
+.btn-requerimentos-eventos {
+    background-color: #000B49;
+    border: 2px solid #000B49;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-requerimentos-eventos:hover {
+    background-color: #00092e;
+    transform: scale(1.02);
+}
+
+/* Estilos para a lista de documentos */
+.lista-documentos {
+    background-color: #000B49;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.lista-documentos div {
+    border-bottom: 1px solid white;
+    padding: 10px 0;
+}
+
+.lista-documentos div:last-child {
+    border-bottom: none;
+}
