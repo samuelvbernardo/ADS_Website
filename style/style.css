@@ -11,6 +11,30 @@
     border-color: #000c49 !important;
 }
 
+.btn-secondary {
+    background-color: #ee7d14 !important;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #000c49 !important;
+    border: none;
+}
+
+
+.bg-orange {
+    background-color: #ee7d14;
+}
+
+.bg-transparent-to-orange {
+    background: transparent;
+}
+
+.bg-transparent-to-orange:hover {
+    background: #ee7d14;
+    transition: transform 0.3s;
+}
+
 body {
     font-family: inter;
     margin: 0;
@@ -19,6 +43,16 @@ body {
 
 .logo {
     max-height: 2.2rem;
+}
+
+
+.bg-title {
+    background-image: url(../assets/bg-title-index.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 432px;
 }
 
 .btn-gray {
@@ -67,4 +101,27 @@ body {
 .btn-list-white-bg-orange li:hover {
     color: #fff;
     background-color: #ee7d14;
+}
+
+.polygon-curso {
+    background-color: #ee7d14;
+    color: #ffffff;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn-expand {
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-expand:hover {
+    transform: scale(1.1); /* Aumenta 10% do tamanho original */
+}
+
+
+@media (min-width: 992px) {
+    .fs-0 {
+        font-size: 3.5rem;
+    }
 }
