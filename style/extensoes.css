@@ -67,3 +67,23 @@ body {
   color: #fff;
   background-color: #ee7d14;
 }
+
+main {
+  color: #000c49;
+}
+
+main .card.bg-light {
+  background-color: #f0f0f0 !important;
+  border-radius: 5px;
+}
+
+.banner-extensions {
+  background: url("/assets/bg.png") no-repeat center center;
+  background-size: cover;
+  min-height: 150px;
+}
+
+.card.bg-light {
+  background-color: #f0f0f0 !important;
+  border-radius: 5px;
+}
