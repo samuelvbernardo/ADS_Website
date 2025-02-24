@@ -1,70 +1,137 @@
+/* Estilos gerais */
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  max-height: 2.2rem;
+}
+
+.btn-gray {
+  background-color: #eeeeee;
+}
+
+/* Cores principais */
 .text-primary {
-    color: #000c49 !important;
+  color: #000c49 !important;
+}
+
+.text-secondary {
+  color: #ee7d14 !important;
+}
+
+.border-primary {
+  border-color: #000c49 !important;
+}
+
+/* Estilizando a seção de filtro */
+.filter-section {
+  background-color: #f8f9fa; /* Cor de fundo suave */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex;
+  gap: 15px; /* Espaço entre os itens */
+  flex-wrap: wrap; /* Permite a quebra de linha se necessário */
+}
+
+/* Estilo dos rótulos */
+.filter-section label {
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte */
+  color: #333; /* Cor do texto */
+  margin-right: 10px; /* Espaçamento à direita */
+}
+
+/* Estilo dos campos de seleção */
+.filter-section select,
+.filter-section input {
+  padding: 8px 12px; /* Preenchimento interno */
+  border: 1px solid #ddd; /* Borda cinza clara */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  width: 200px; /* Largura fixa */
+  transition: border-color 0.3s; /* Transição suave para a cor da borda */
+}
+
+/* Foco nos campos de entrada e seleção */
+.filter-section select:focus,
+.filter-section input:focus {
+  border-color: #ff7f00; /* Cor da borda ao focar */
+  outline: none; /* Remove a borda externa */
+}
+
+/* Estilizando o campo de texto */
+.filter-section input {
+  flex: 1; /* Ocupa o restante do espaço */
+  max-width: 300px; /* Largura máxima */
+}
+
+/* Adicionando espaçamento entre os filtros */
+.filter-section select, .filter-section input {
+  margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .filter-section {
+      flex-direction: column; /* Organiza os itens em coluna em telas menores */
+      align-items: flex-start; /* Alinha à esquerda */
   }
-  
-  .text-secondary {
-    color: #ee7d14 !important;
+
+  .filter-section label {
+      margin-bottom: 5px; /* Adiciona espaço abaixo do rótulo */
   }
-  
-  .border-primary {
-    border-color: #000c49 !important;
-  }
-  
-  body {
-    font-family: inter;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .logo {
-    max-height: 2.2rem;
-  }
-  
-  .btn-gray {
-    background-color: #eeeeee;
-  }
-  
-  .navbar-list-orange li a:hover {
-    color: #ee7d14;
-  }
-  
-  .links-list-orange li {
-    transition: transform 0.3s;
-  }
-  
-  .links-list-orange li:hover {
-    transform: translateX(5px);
-    color: #ee7d14;
-  }
-  
-  .btn-facebook:hover {
-    color: #3b5998;
-    cursor: pointer;
-  }
-  .btn-twitter-x:hover {
-    color: #3b3434;
-    cursor: pointer;
-  }
-  .btn-instagram:hover {
-    color: #e4405f;
-    cursor: pointer;
-  }
-  .btn-youtube:hover {
-    color: #cd201f;
-    cursor: pointer;
-  }
-  .btn-discord:hover {
-    color: #7289da;
-    cursor: pointer;
-  }
-  
-  .btn-white-bg-orange:hover {
-    color: #fff;
-    background-color: #ee7d14;
-  }
-    
-  .btn-list-white-bg-orange li:hover {
-    color: #fff;
-    background-color: #ee7d14;
-  }
-  
+}
+
+/* Navbar e links */
+.navbar-list-orange li a:hover {
+  color: #ee7d14;
+}
+
+.links-list-orange li {
+  transition: transform 0.3s;
+}
+
+.links-list-orange li:hover {
+  transform: translateX(5px);
+  color: #ee7d14;
+}
+
+/* Estilos de botões */
+.btn-facebook:hover {
+  color: #3b5998;
+  cursor: pointer;
+}
+
+.btn-twitter-x:hover {
+  color: #3b3434;
+  cursor: pointer;
+}
+
+.btn-instagram:hover {
+  color: #e4405f;
+  cursor: pointer;
+}
+
+.btn-youtube:hover {
+  color: #cd201f;
+  cursor: pointer;
+}
+
+.btn-discord:hover {
+  color: #7289da;
+  cursor: pointer;
+}
+
+.btn-white-bg-orange:hover {
+  color: #fff;
+  background-color: #ee7d14;
+}
+
+.btn-list-white-bg-orange li:hover {
+  color: #fff;
+  background-color: #ee7d14;
+}
