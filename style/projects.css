@@ -1,0 +1,164 @@
+.text-primary {
+    color: #000c49 !important;
+}
+
+.text-secondary {
+    color: #ee7d14 !important;
+    font-weight: bold;
+}
+
+.border-primary {
+    border-color: #000c49 !important;
+    border-width: 2px;
+    border-radius: 8px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.logo {
+    max-height: 2.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+}
+
+.btn-gray {
+    background-color: #eeeeee;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 6px;
+}
+
+.btn-gray:hover {
+    background-color: #d6d6d6;
+    transform: scale(1.05);
+}
+
+.navbar-list-orange li a {
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-list-orange li a:hover {
+    color: #ee7d14;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.links-list-orange li {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.links-list-orange li:hover {
+    transform: translateX(5px);
+    color: #ee7d14;
+    font-weight: bold;
+}
+
+.btn-facebook:hover,
+.btn-twitter-x:hover,
+.btn-instagram:hover,
+.btn-youtube:hover,
+.btn-discord:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-facebook:hover { color: #3b5998; }
+.btn-twitter-x:hover { color: #3b3434; }
+.btn-instagram:hover { color: #e4405f; }
+.btn-youtube:hover { color: #cd201f; }
+.btn-discord:hover { color: #7289da; }
+
+.btn-white-bg-orange {
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    border-radius: 6px;
+    padding: 10px 16px;
+}
+
+.btn-white-bg-orange:hover {
+    color: #fff;
+    background-color: #ee7d14;
+    transform: scale(1.08);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-list-white-bg-orange li {
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.btn-list-white-bg-orange li:hover {
+    color: #fff;
+    background-color: #ee7d14;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização para os cards de projetos */
+.projects-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+}
+
+.project-card .card-content {
+    padding: 15px;
+}
+
+.project-card h3 {
+    color: #ee7d14;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    display: inline-block;
+    background-color: #ee7d14;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-card a:hover {
+    background-color: #cc6600;
+}
