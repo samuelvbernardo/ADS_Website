@@ -1,28 +1,35 @@
+:root {
+  --bs-primary: #000c49;
+  --bs-secondary: #ee7d14;
+  --btn-gray: #eeeeee;
+  --btn-blue: #000c49;
+}
+
 .text-primary {
-  color: #000c49 !important;
+  color: var(--bs-primary) !important;
 }
 
 .text-secondary {
-  color: #ee7d14 !important;
+  color: var(--bs-secondary) !important;
 }
 
 .border-primary {
-  border-color: #000c49 !important;
+  border-color: var(--bs-primary) !important;
 }
 
 .btn-secondary {
-    background-color: #ee7d14 !important;
+    background-color: var(--bs-secondary) !important;
     border: none;
 }
 
 .btn-primary {
-    background-color: #000c49 !important;
+    background-color: var(--btn-blue) !important;
     border: none;
 }
 
 
 .bg-orange {
-    background-color: #ee7d14;
+    background-color: var(--bs-secondary);
 }
 
 .bg-transparent-to-orange {
@@ -30,7 +37,7 @@
 }
 
 .bg-transparent-to-orange:hover {
-    background: #ee7d14;
+    background: var(--bs-secondary);
     transition: transform 0.3s;
 }
 
@@ -55,11 +62,11 @@ body {
 }
 
 .btn-gray {
-  background-color: #eeeeee;
+  background-color: var(--btn-gray);
 }
 
 .navbar-list-orange li a:hover {
-  color: #ee7d14;
+  color: var(--bs-secondary);
 }
 
 .links-list-orange li {
@@ -68,7 +75,7 @@ body {
 
 .links-list-orange li:hover {
   transform: translateX(5px);
-  color: #ee7d14;
+  color: var(--bs-secondary);
 }
 
 .btn-facebook:hover {
@@ -94,16 +101,16 @@ body {
 
 .btn-white-bg-orange:hover {
   color: #fff;
-  background-color: #ee7d14;
+  background-color: var(--bs-secondary);
 }
 
 .btn-list-white-bg-orange li:hover {
   color: #fff;
-  background-color: #ee7d14;
+  background-color: var(--bs-secondary);
 }
 
 .polygon-curso {
-    background-color: #ee7d14;
+    background-color: var(--bs-secondary);
     color: #ffffff;
     display: inline-block;
     padding: 0.5rem 1.5rem;
@@ -116,6 +123,25 @@ body {
 
 .btn-expand:hover {
     transform: scale(1.1); /* Aumenta 10% do tamanho original */
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #ffffff;
+
+  body {
+    background-color: #181a1b;
+  }
+  .bg-light {
+    background-color: #1b1e1f !important;
+  }
+
+  .btn-gray {
+    background-color: #222426;
+  }
+
+  .bg-white {
+    background-color: #181a1b !important;
+  }
 }
 
 

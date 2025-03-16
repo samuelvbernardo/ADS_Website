@@ -1,13 +1,20 @@
+:root {
+  --bs-primary: #000c49;
+  --bs-secondary: #ee7d14;
+  --btn-gray: #eeeeee;
+  --btn-blue: #000c49;
+}
+
 .text-primary {
-  color: #000c49 !important;
+  color: var(--bs-primary) !important;
 }
 
 .text-secondary {
-  color: #ee7d14 !important;
+  color: var(--bs-secondary) !important;
 }
 
 .border-primary {
-  border-color: #000c49 !important;
+  border-color: var(--bs-primary) !important;
 }
 
 body {
@@ -21,11 +28,11 @@ body {
 }
 
 .btn-gray {
-  background-color: #eeeeee;
+  background-color: var(--btn-gray);
 }
 
 .navbar-list-orange li a:hover {
-  color: #ee7d14;
+  color: var(--bs-secondary);
 }
 
 .links-list-orange li {
@@ -34,7 +41,7 @@ body {
 
 .links-list-orange li:hover {
   transform: translateX(5px);
-  color: #ee7d14;
+  color: var(--bs-secondary);
 }
 
 .btn-facebook:hover {
@@ -60,22 +67,19 @@ body {
 
 .btn-white-bg-orange:hover {
   color: #fff;
-  background-color: #ee7d14;
+  background-color: var(--bs-secondary);
 }
 
 .btn-list-white-bg-orange li:hover {
   color: #fff;
-  background-color: #ee7d14;
+  background-color: var(--bs-secondary);
 }
 
 main {
-  color: #000c49;
+  color: var(--bs-primary);
 }
 
-main .card.bg-light {
-  background-color: #f0f0f0 !important;
-  border-radius: 5px;
-}
+
 
 .banner-extensions {
   background: url("/assets/bg.png") no-repeat center center;
@@ -86,4 +90,23 @@ main .card.bg-light {
 .card.bg-light {
   background-color: #f0f0f0 !important;
   border-radius: 5px;
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #ffffff;
+
+  body {
+    background-color: #181a1b;
+  }
+  .bg-light {
+    background-color: #1b1e1f !important;
+  }
+
+  .btn-gray {
+    background-color: #222426;
+  }
+
+  .bg-white {
+    background-color: #181a1b !important;
+  }
 }
