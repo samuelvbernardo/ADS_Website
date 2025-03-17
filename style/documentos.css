@@ -162,3 +162,22 @@ body {
   background-size: cover;
   min-height: 150px;
 }
+
+[data-bs-theme="dark"] {
+  --bs-primary: #ffffff;
+
+  body {
+    background-color: #181a1b;
+  }
+  .bg-light {
+    background-color: #1b1e1f !important;
+  }
+
+  .btn-gray {
+    background-color: #222426;
+  }
+
+  .bg-white {
+    background-color: #181a1b !important;
+  }
+}
