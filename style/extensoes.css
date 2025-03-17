@@ -75,11 +75,53 @@ body {
   background-color: var(--bs-secondary);
 }
 
-main {
-  color: var(--bs-primary);
+/* ======== Estilização Geral ======== */
+
+.list-group-item:last-child {
+  border-bottom: none; /* Remove a linha do último item */
 }
 
+.list-group-item a {
+  color: #000b49;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
 
+.list-group-item a:hover {
+  color: #ee7d14;
+}
+
+.list-group-item i {
+  margin-right: 1rem;
+}
+
+/* ======== Sidebar UTILIDADES ======== */
+.utilities h1 {
+  color: #000c49;
+  font-size: 1.6rem;
+}
+
+/* Estilização dos itens da barra de utilidades */
+.utilities .list-group-item {
+  text-align: center; /* Centraliza o texto */
+  font-weight: bold;
+  color: #000c49; /* Cor padrão */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Efeito ao passar o mouse */
+.utilities .list-group-item:hover {
+  background-color: #f5f5f5; /* Fundo mais claro */
+  color: #ee7d14 !important; /* Texto laranja */
+  cursor: pointer;
+}
 
 .banner-extensions {
   background: url("/assets/bg.png") no-repeat center center;
