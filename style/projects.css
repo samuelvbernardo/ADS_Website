@@ -1,106 +1,85 @@
+:root {
+  --bs-primary: #000c49;
+  --bs-secondary: #ee7d14;
+  --btn-gray: #eeeeee;
+  --btn-blue: #000c49;
+  --transition-speed: 0.3s;
+}
+
 /* Estilos gerais */
 body {
-  font-family: Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  color: var(--bs-primary);
+  line-height: 1.6;
 }
 
-.logo {
-  max-height: 2.2rem;
-}
-
-.btn-gray {
-  background-color: #eeeeee;
-}
-
-/* Cores principais */
 .text-primary {
-  color: #000c49 !important;
+  color: var(--bs-primary) !important;
 }
 
 .text-secondary {
-  color: #ee7d14 !important;
+  color: var(--bs-secondary) !important;
 }
 
 .border-primary {
-  border-color: #000c49 !important;
+  border-color: var(--bs-primary) !important;
 }
 
-/* Estilizando a seção de filtro */
-.filter-section {
-  background-color: #f8f9fa; /* Cor de fundo suave */
-  padding: 20px; /* Espaçamento interno */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  display: flex;
-  gap: 15px; /* Espaço entre os itens */
-  flex-wrap: wrap; /* Permite a quebra de linha se necessário */
+.btn-secondary {
+  background-color: var(--bs-secondary) !important;
+  border: none;
+  transition: background-color var(--transition-speed) ease;
 }
 
-/* Estilo dos rótulos */
-.filter-section label {
-  font-size: 1rem; /* Tamanho da fonte */
-  font-weight: 500; /* Peso da fonte */
-  color: #333; /* Cor do texto */
-  margin-right: 10px; /* Espaçamento à direita */
+.btn-secondary:hover {
+  background-color: darken(var(--bs-secondary), 10%) !important;
 }
 
-/* Estilo dos campos de seleção */
-.filter-section select,
-.filter-section input {
-  padding: 8px 12px; /* Preenchimento interno */
-  border: 1px solid #ddd; /* Borda cinza clara */
-  border-radius: 4px; /* Bordas arredondadas */
-  font-size: 1rem; /* Tamanho da fonte */
-  width: 200px; /* Largura fixa */
-  transition: border-color 0.3s; /* Transição suave para a cor da borda */
+.btn-primary {
+  background-color: var(--btn-blue) !important;
+  border: none;
+  transition: background-color var(--transition-speed) ease;
 }
 
-/* Foco nos campos de entrada e seleção */
-.filter-section select:focus,
-.filter-section input:focus {
-  border-color: #ff7f00; /* Cor da borda ao focar */
-  outline: none; /* Remove a borda externa */
+.btn-primary:hover {
+  background-color: darken(var(--btn-blue), 10%) !important;
 }
 
-/* Estilizando o campo de texto */
-.filter-section input {
-  flex: 1; /* Ocupa o restante do espaço */
-  max-width: 300px; /* Largura máxima */
+.bg-orange {
+  background-color: var(--bs-secondary);
 }
 
-/* Adicionando espaçamento entre os filtros */
-.filter-section select, .filter-section input {
-  margin-top: 10px;
+.bg-transparent-to-orange {
+  background: transparent;
+  transition: background-color var(--transition-speed) ease;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .filter-section {
-      flex-direction: column; /* Organiza os itens em coluna em telas menores */
-      align-items: flex-start; /* Alinha à esquerda */
-  }
-
-  .filter-section label {
-      margin-bottom: 5px; /* Adiciona espaço abaixo do rótulo */
-  }
+.bg-transparent-to-orange:hover {
+  background: var(--bs-secondary);
 }
 
-/* Navbar e links */
+/* Navbar */
+.navbar-list-orange li a {
+  transition: color var(--transition-speed) ease;
+}
+
 .navbar-list-orange li a:hover {
-  color: #ee7d14;
+  color: var(--bs-secondary);
 }
 
+/* Links */
 .links-list-orange li {
-  transition: transform 0.3s;
+  transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .links-list-orange li:hover {
   transform: translateX(5px);
-  color: #ee7d14;
+  color: var(--bs-secondary);
 }
 
-/* Estilos de botões */
+/* Botões de redes sociais */
 .btn-facebook:hover {
   color: #3b5998;
   cursor: pointer;
@@ -126,12 +105,217 @@ body {
   cursor: pointer;
 }
 
+.btn-white-bg-orange {
+  background-color: #fff;
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
 .btn-white-bg-orange:hover {
+  background-color: var(--bs-secondary);
   color: #fff;
-  background-color: #ee7d14;
+  border-color: var(--bs-secondary);
+}
+
+.btn-list-white-bg-orange li {
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .btn-list-white-bg-orange li:hover {
   color: #fff;
-  background-color: #ee7d14;
+  background-color: var(--bs-secondary);
+}
+
+/* Estilos específicos para a página de projetos */
+.projects {
+  padding: 3rem 0;
+}
+
+.projects header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--bs-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.filter-section label {
+  font-weight: bold;
+  color: var(--bs-primary);
+}
+
+.filter-section select,
+.filter-section input {
+  padding: 0.5rem;
+  border: 1px solid var(--bs-primary);
+  border-radius: 4px;
+  background-color: #fff;
+  color: var(--bs-primary);
+  transition: border-color var(--transition-speed) ease;
+}
+
+.filter-section select:focus,
+.filter-section input:focus {
+  outline: none;
+  border-color: var(--bs-secondary);
+}
+
+/* Cards de projetos */
+.card {
+  border: 1px solid var(--bs-primary);
+  border-radius: 8px;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--bs-primary);
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: var(--bs-primary);
+  margin-bottom: 1.5rem;
+}
+
+.btn-white-bg-orange {
+  background-color: #fff;
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.btn-white-bg-orange:hover {
+  background-color: var(--bs-secondary);
+  color: #fff;
+  border-color: var(--bs-secondary);
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  padding: 2rem 0;
+  color: var(--bs-primary);
+  margin-top: 3rem;
+}
+
+footer h4 {
+  font-weight: bold;
+  color: var(--bs-primary);
+  margin-bottom: 1.5rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul li i {
+  margin-right: 0.5rem;
+}
+
+footer form input {
+  border: 1px solid var(--bs-primary);
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+footer form button {
+  background-color: var(--bs-secondary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+footer form button:hover {
+  background-color: var(--bs-primary);
+}
+
+/* Modo escuro */
+[data-bs-theme="dark"] {
+  --bs-primary: #ffffff;
+
+  body {
+    background-color: #181a1b;
+    color: #fff;
+  }
+
+  .bg-light {
+    background-color: #1b1e1f !important;
+  }
+
+  .btn-gray {
+    background-color: #222426;
+  }
+
+  .bg-white {
+    background-color: #181a1b !important;
+  }
+
+  .card {
+    background-color: #1b1e1f;
+    border-color: #2c2f31;
+  }
+
+  .card-title,
+  .card-text {
+    color: #fff;
+  }
+
+  .btn-white-bg-orange {
+    background-color: #1b1e1f;
+    color: #fff;
+    border-color: #2c2f31;
+  }
+
+  .btn-white-bg-orange:hover {
+    background-color: var(--bs-secondary);
+    color: #fff;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .projects header h1 {
+    font-size: 2rem;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-section select,
+  .filter-section input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
 }
