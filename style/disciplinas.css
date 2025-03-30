@@ -65,6 +65,10 @@ body {
   cursor: pointer;
 }
 
+.bg-orange {
+  background-color: var(--bs-secondary);
+}
+
 .btn-white-bg-orange:hover {
   color: #fff;
   background-color: var(--bs-secondary);

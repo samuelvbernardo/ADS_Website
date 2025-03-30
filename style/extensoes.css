@@ -23,9 +23,22 @@ body {
   padding: 0;
 }
 
+.bg-title {
+  background-image: url(../assets/bg-title-index.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 432px;
+}
+
 .logo {
   max-height: 2.2rem;
 }
+
+.bg-orange {
+  background-color: var(--bs-secondary);
+} 
 
 .btn-gray {
   background-color: var(--btn-gray);

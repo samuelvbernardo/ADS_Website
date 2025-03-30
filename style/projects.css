@@ -15,6 +15,19 @@ body {
   line-height: 1.6;
 }
 
+.logo {
+  max-height: 2.2rem;
+}
+
+.bg-title {
+  background-image: url(../assets/bg-title-index.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: px;
+}
+
 .text-primary {
   color: var(--bs-primary) !important;
 }
