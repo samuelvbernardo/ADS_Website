@@ -1,82 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="light">
+{% extends "base.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../style/projects.css">
-</head>
+{% block css %}
+    <link rel="stylesheet" href={% static "./css/projetos.css" %}>    
+{% endblock css %}
 
-<body>
-    <header class="">
-        <nav class="navbar navbar-white bg-white m-0 p-0 pb-1">
-            <section class="container-fluid pb-3 pt-3 shadow-sm">
-                <div class="container-fluid d-flex justify-content-between align-items-center w-75">
-                    <a class="navbar-brand d-flex align-items-center" href="index.html">
-                        <img src="/assets/logo.png" alt="Logo do site" class="img-fluid logo">
-                        <span class="fw-bold ms-1">ADS</span>
-                    </a>
-
-                    <ul class="navbar-nav flex-row gap-4 me-lg-4 d-flex align-items-center d-none d-sm-flex btn-list-orange">
-                        <li class="nav-item">
-                            <i class="bi bi-facebook btn-facebook fs-5"></i>
-                        </li>
-                        <li class="nav-item">
-                            <i class="bi bi-twitter-x btn-twitter-x fs-5"></i>
-                        </li>
-                        <li class="nav-item">
-                            <i class="bi bi-instagram btn-instagram fs-5"></i>
-                        </li>
-                        <li class="nav-item">
-                            <i class="bi bi-youtube btn-youtube fs-5"></i>
-                        </li>
-                        <li class="nav-item">
-                            <i class="bi bi-discord btn-discord fs-5"></i>
-                        </li>
-                    </ul>
-
-                    <button class="btn btn-gray btn-white-bg-orange" id="themeToggle">
-                        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
-
-
-                        <button class="navbar-toggler btn-gray d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavContent" aria-controls="navbarNavContent" aria-expanded="false" aria-label="Alternar navegação">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                </div>
-            </section>
-        </nav>
-
-       <nav class="navbar navbar-expand-lg bg-white bg-light shadow">
-            <section class="container-fluid align-items-center pb-2">
-                <div class="collapse navbar-collapse" id="navbarNavContent">
-                    <ul class="navbar-nav m-auto d-flex align-items-center navbar-list-orange fs-6 gap-2">
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="index.html">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="disciplinas.html">Disciplinas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="extensoes.html">Extensões</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="projects.html">Projetos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="noticias.html">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="documentos.html">Documentação</a>
-                </li>
-          </ul>
-        </div>
-      </section>
-        </nav>
-    </header>
+{% block content %}
     <div class="bg-title text-white text-center py-5 d-flex align-items-center justify-content-center flex-column" >
         <h1 class="">Projetos</h1>
         <div class="bg-orange p-1 my-3 w-25"></div>
@@ -134,6 +63,7 @@
             </div>
         </div>
     </main>
+{% endblock content %}
 
     <footer class="bg-white py-5 text-primary">
         <section class="container">

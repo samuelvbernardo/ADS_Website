@@ -15,6 +15,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+LOCAL_APPS = ['ads_app',]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -22,9 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'ads_app',  # Adicionando o app criado
-]
+] + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -41,7 +41,7 @@ ROOT_URLCONF = 'adsproject.urls'  # Corrigido para o nome do seu projeto
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'ads_app', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,9 +89,21 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-STATIC_URL = 'static/'
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# definir o diretório para armazenar os arquivos estáticos
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# diretório onde os arquivos serão coletados em produção
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
 
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'ads_app', 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

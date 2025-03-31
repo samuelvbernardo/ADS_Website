@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href={% static "./css/noticias.css" %}> <!-- Link para o CSS -->
+{% endblock css %}
+
+
+{% block content %}
+  <main>
+    <section class="bg-light py-5">
+      <div class="container">
+        <div class="row"><!-- Row principal -->
+
+          <!-- COLUNA ESQUERDA (NOTICIAS) -->
+          <div class="col-md-8">
+
+            <!-- Subtítulo das pastas -->
+            <h2 class="text-secondary fw-bold mb-3">EVENTOS</h2>
+
+            <!-- Pasta EVENTOS -->
+            <div class="mb-3">
+              <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-events">
+                <i class="fa-regular fa-folder me-2"></i> PROGRAMAÇÕES
+              </button>
+              <div id="documents-events" class="collapse mt-2 p-2 border rounded bg-white">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS CONNECTION 2022</a></li>
+                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022</a></li>
+                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - PROGRAMAÇÃO</a></li>
+                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - REGULAMENTO</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - INSCRIÇÕES</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Seção NOTICIAS -->
+            <!-- Seção NOTICIAS -->
+<h2 class="fw-bold text-secondary mt-4 mb-3">NOTÍCIAS</h2>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item border-bottom d-flex align-items-center">
+    <div class="flex-grow-1 me-3">
+      <h2 class="h5"><a href="./monitarians/posts/monitarian-python.html" class="text-decoration-none">Está aberto o Vestibular do Curso de ADS (Unifip)</a></h2>
+      <p>Faça o Vestibular Gratuitamente Online!</p>
+    </div>
+    <img src="../assets/noticias/LogoADS.png" alt="Imagem da notícia" class="img-fluid" style="max-width: 150px;">
+  </li>
+  
+  <li class="list-group-item border-bottom d-flex align-items-center">
+    <div class="flex-grow-1 me-3">
+      <h2 class="h5"><a href="#" class="text-decoration-none">ADS EXPERIENCE ! Garanta Sua Vaga</a></h2>
+      <p>Evento do Curso de Ads, Ads Experience Começa Hoje , Garanta sua Vaga Remotamente</p>
+    </div>
+    <img src="../assets/noticias/Evento.png" alt="Imagem da notícia" class="img-fluid" style="max-width: 150px;">
+  </li>
+  
+  <li class="list-group-item border-bottom d-flex align-items-center">
+    <div class="flex-grow-1 me-3">
+      <h2 class="h5"><a href="#" class="text-decoration-none">Hoje nosso curso abrirá sua vitrine de projetos do semestre 2025.1</a></h2>
+      <p>Nosso showcase deste semestre contará com projetos da extensão curricular e de algumas disciplinas do curso.</p>
+    </div>
+    <img src="../assets/noticias/Projetos.png" alt="Imagem da notícia" class="img-fluid" style="max-width: 150px;">
+  </li>
+  
+  <li class="list-group-item border-bottom d-flex align-items-center">
+    <div class="flex-grow-1 me-3">
+      <h2 class="h5"><a href="#" class="text-decoration-none">Novos Horários Do Semestre 2025.1</a></h2>
+      <p>Horários das disciplinas do semestre 2025.1</p>
+    </div>
+    <img src="../assets/noticias/horarios.webp" alt="Imagem da notícia" class="img-fluid" style="max-width: 150px;">
+  </li>
+  
+  <li class="list-group-item border-bottom d-flex align-items-center">
+    <div class="flex-grow-1 me-3">
+      <h2 class="h5"><a href="#" class="text-decoration-none">Está aberta a monitoria de Programação Orientada a Objetos</a></h2>
+      <p>Se inscreva e vire monitor!</p>
+    </div>
+    <img src="../assets/noticias/bg-monitorias.png" alt="Imagem da notícia" class="img-fluid" style="max-width: 150px;">
+  </li>
+</ul>
+
+          </div><!-- Fim col-md-8 -->
+
+          <div class="col-md-4">
+            <section class="utilities">
+              <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
+              <div class="card border-0 shadow-sm">
+                <ul class="list-group list-group-flush text-center">
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
+                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
+                </ul>
+              </div>
+            </section>
+          </div><!-- Fim col-md-4 -->
+
+        </div><!-- Fim row -->
+      </div><!-- Fim container -->
+    </section>
+  </main>
+{% endblock content %}

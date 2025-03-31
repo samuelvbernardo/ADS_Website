@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ads_app.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('base/', BaseView.as_view()),
+    path('index/', IndexView.as_view()),
+    path('documentos/', DocumentosView.as_view()),
+    path('disciplinas/', DisciplinasView.as_view() ),
+    path('noticias/', NoticiasView.as_view() ),
+    path('projetos/', ProjetosView.as_view() ),
+    path('extensoes/', ExtensoesView.as_view() ),
+] 
