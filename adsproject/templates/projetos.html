@@ -1,132 +1,63 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css %}
-    <link rel="stylesheet" href={% static "./css/projetos.css" %}>    
-{% endblock css %}
+{% block title %}Projetos | ADS{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/projetos.css' %}">
+{% endblock %}
 
 {% block content %}
-    <div class="bg-title text-white text-center py-5 d-flex align-items-center justify-content-center flex-column" >
-        <h1 class="">Projetos</h1>
-        <div class="bg-orange p-1 my-3 w-25"></div>
-        <div></div>
-    </div>
-    <section class="container">
-        <section class="container-left">
-          <section class="projects">
+<div class="bg-title text-white text-center py-5 d-flex align-items-center justify-content-center flex-column">
+    <h1 class="">Projetos</h1>
+    <div class="bg-orange p-1 my-3 w-25"></div>
+    <div></div>
+</div>
+<section class="container">
+    <section class="container-left">
+        <section class="projects">
             <header>
             </header>
-  
+
             <section class="filter-section d-flex align-items-center">
-              <label for="filter-year">Ano:</label>
-              <select id="filter-year" class="bg-white">
-                <option value="">Todos</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-              </select>
-  
-              <label for="filter-type">Tipo de Parceria:</label>
-              <select id="filter-type" class="bg-white">
-                <option value="">Todos</option>
-                <option value="parceria">Parceria com Alunos</option>
-                <option value="coordenacao">Coordenação</option>
-              </select>
-  
-              <label for="filter-tech">Tecnologia:</label>
-              <input
-                type="text"
-                id="filter-tech"
-                placeholder="Ex: Django, React"
-                class="bg-white"
-              />
+                <label for="filter-year">Ano:</label>
+                <select id="filter-year" class="bg-white">
+                    <option value="">Todos</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+
+                <label for="filter-type">Tipo de Parceria:</label>
+                <select id="filter-type" class="bg-white">
+                    <option value="">Todos</option>
+                    <option value="parceria">Parceria com Alunos</option>
+                    <option value="coordenacao">Coordenação</option>
+                </select>
+
+                <label for="filter-tech">Tecnologia:</label>
+                <input type="text" id="filter-tech" placeholder="Ex: Django, React" class="bg-white" />
             </section>
-    <main class="container mt-5">
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <div class="card border-primary shadow-sm p-3">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary">Projeto WebLinker</h5>
-                        <p class="card-text">Uma plataforma desenvolvida para compartilhamento de links e recursos educacionais.</p>
-                        <a href="#" class="btn btn-white-bg-orange">Saiba mais</a>
+            <main class="container mt-5">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card border-primary shadow-sm p-3">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary">Projeto WebLinker</h5>
+                                <p class="card-text">Uma plataforma desenvolvida para compartilhamento de links e recursos educacionais.</p>
+                                <a href="#" class="btn btn-white-bg-orange">Saiba mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-primary shadow-sm p-3">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary">Kitanda Delivery</h5>
+                                <p class="card-text">Aplicativo focado em vendas locais, desenvolvido pela
+                                    coordenação para fortalecer a comunidade.</p>
+                                <a href="#" class="btn btn-white-bg-orange">Saiba mais</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card border-primary shadow-sm p-3">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary">Kitanda Delivery</h5>
-                        <p class="card-text">Aplicativo focado em vendas locais, desenvolvido pela
-                            coordenação para fortalecer a comunidade.</p>
-                        <a href="#" class="btn btn-white-bg-orange">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-{% endblock content %}
-
-    <footer class="bg-white py-5 text-primary">
-        <section class="container">
-            <div class="row text-center text-lg-start justify-content-center">
-                <!-- Redes Sociais -->
-                <div class="col-12 col-lg-3 mb-4">
-                    <a class="navbar-brand d-flex align-items-center justify-content-center justify-content-lg-start mb-3" href="index.html">
-                        <img src="/assets/logo.png" alt="Logo do site" class="img-fluid logo">
-                        <span class="fw-bold fs-4 ms-1">ADS</span>
-                    </a>
-                    <p>Quer conhecer mais sobre nosso cotidiano? Acesse nossas redes sociais.</p>
-                    <ul class="list-unstyled d-flex justify-content-center justify-content-lg-start btn-list-white-bg-orange">
-                        <li class="btn btn-gray me-2"><i class="bi bi-facebook"></i></li>
-                        <li class="btn btn-gray me-2"><i class="bi bi-twitter-x"></i></li>
-                        <li class="btn btn-gray me-2"><i class="bi bi-instagram"></i></li>
-                        <li class="btn btn-gray"><i class="bi bi-linkedin"></i></li>
-                    </ul>
-                </div>
-
-                <!-- Contate-nos -->
-                <div class="col-12 col-lg-3 mb-4">
-                    <h4 class="mb-3 fw-bold">Contate-nos</h4>
-                    <ul class="list-unstyled d-flex flex-column gap-3">
-                        <li><i class="bi bi-telephone-fill me-2"></i><span>(83) 3421-4047</span></li>
-                        <li><i class="bi bi-telephone-fill me-2"></i><span>(83) 3421-4047</span></li>
-                        <li><i class="bi bi-envelope-fill me-2"></i><span>coordenacao@ads.fiponline.edu.br</span></li>
-                        <li><i class="bi bi-geo-alt-fill me-2"></i><span>Patos, Paraíba, Brasil - 58704-440</span></li>
-                    </ul>
-                </div>
-
-                <!-- Links -->
-                <div class="col-12 col-lg-3 mb-4">
-                    <h4 class="mb-3 fw-bold">Links</h4>
-                    <ul class="list-unstyled d-flex flex-column gap-3 links-list-orange">
-                        <li><i class="bi bi-arrow-right me-2"></i>Início</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Extensões</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Projetos</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Documentação</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Disciplinas</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Monitorias</li>
-                    </ul>
-                </div>
-
-                <!-- Notícias -->
-                <div class="col-12 col-lg-3 mb-4">
-                    <h4 class="mb-3 fw-bold">Notícias</h4>
-                    <p>Inscreva-se para receber as últimas atualizações</p>
-                    <form class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3" role="search">
-                        <input class="form-control w-75" type="search" placeholder="Seu email" aria-label="Buscar">
-                        <button class="btn btn-light btn-white-bg-orange border-primary w-50" type="submit">Inscreva-se</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="border-top mt-3 d-flex justify-content-center fs-4 text-center">
-                <p class="mt-4">Criado pelos alunos de ADS | todos os direitos reservados!</p>
-            </div>
-        </section>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../js/darkMode.js"></script>
-</body>
-
-</html>
+            </main>
+            {% endblock content %}

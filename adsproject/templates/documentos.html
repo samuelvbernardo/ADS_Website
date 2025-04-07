@@ -1,89 +1,91 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css %}
-  <link rel="stylesheet" href={% static "./css/documentos.css" %}>
-{% endblock css %}
+{% block title %}Documentos | ADS{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/documentos.css' %}">
+{% endblock %}
 
 {% block content %}
-  <main>
-    <section class="bg-light py-5">
-      <div class="container">
-        <div class="row"><!-- Row principal -->
+<main>
+  <section class="bg-light py-5">
+    <div class="container">
+      <div class="row"><!-- Row principal -->
 
-          <!-- COLUNA ESQUERDA (DOCUMENTOS) -->
-          <div class="col-md-8">
-            <!-- Título principal -->
-            <h1 class="fw-bold text-primary mb-4">DOCUMENTOS IMPORTANTES</h1>
+        <!-- COLUNA ESQUERDA (DOCUMENTOS) -->
+        <div class="col-md-8">
+          <!-- Título principal -->
+          <h1 class="fw-bold text-primary mb-4">DOCUMENTOS IMPORTANTES</h1>
 
-            <!-- Subtítulo das pastas -->
-            <h2 class="text-secondary fw-bold mb-3">PASTAS DE ARQUIVOS</h2>
+          <!-- Subtítulo das pastas -->
+          <h2 class="text-secondary fw-bold mb-3">PASTAS DE ARQUIVOS</h2>
 
-            <!-- Pasta REQUERIMENTOS -->
-            <div class="mb-3">
-              <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-requirements">
-                <i class="fa-regular fa-folder me-2"></i> REQUERIMENTOS
-              </button>
-              <div id="documents-requirements" class="collapse mt-2 p-2 border rounded bg-white">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 21/07/2022 - Edital para submissão de trabalhos - II COBPOS</a></li>
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - CURSAR COMPONENTE CURRICULAR EM OUTRA TURMA</a></li>
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - DISPENSA DE DISCIPLINA</a></li>
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - SOLICITAÇÃO DE DOCUMENTOS - UNIFIP</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - TRANCAMENTO DE MATRÍCULA DE CURSO</a></li>
-                </ul>
-              </div>
+          <!-- Pasta REQUERIMENTOS -->
+          <div class="mb-3">
+            <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-requirements">
+              <i class="fa-regular fa-folder me-2"></i> REQUERIMENTOS
+            </button>
+            <div id="documents-requirements" class="collapse mt-2 p-2 border rounded bg-white">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 21/07/2022 - Edital para submissão de trabalhos - II COBPOS</a></li>
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - CURSAR COMPONENTE CURRICULAR EM OUTRA TURMA</a></li>
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - DISPENSA DE DISCIPLINA</a></li>
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - SOLICITAÇÃO DE DOCUMENTOS - UNIFIP</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - TRANCAMENTO DE MATRÍCULA DE CURSO</a></li>
+              </ul>
             </div>
+          </div>
 
-            <!-- Pasta EVENTOS -->
-            <div class="mb-3">
-              <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-events">
-                <i class="fa-regular fa-folder me-2"></i> EVENTOS
-              </button>
-              <div id="documents-events" class="collapse mt-2 p-2 border rounded bg-white">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS CONNECTION 2022</a></li>
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022</a></li>
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - PROGRAMAÇÃO</a></li>
-                  <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - REGULAMENTO</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - INSCRIÇÕES</a></li>
-                </ul>
-              </div>
+          <!-- Pasta EVENTOS -->
+          <div class="mb-3">
+            <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-events">
+              <i class="fa-regular fa-folder me-2"></i> EVENTOS
+            </button>
+            <div id="documents-events" class="collapse mt-2 p-2 border rounded bg-white">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS CONNECTION 2022</a></li>
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022</a></li>
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - PROGRAMAÇÃO</a></li>
+                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - REGULAMENTO</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - INSCRIÇÕES</a></li>
+              </ul>
             </div>
+          </div>
 
-            <!-- Seção ARQUIVOS -->
-            <h2 class="fw-bold text-secondary mt-4 mb-3">ARQUIVOS</h2>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 25/07/2023 - Matrix curricular - Especialização em Direito Administrativo e Gestão Pública</a></li>
-              <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 21/07/2022 - Edital para submissão de trabalhos - II COBPOS</a></li>
-              <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> Resolução 001 CNE/CES - 06/04/2018</a></li>
-              <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 12/06/2020 - Decisão ACP-RN</a></li>
-              <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REGIMENTO GERAL</a></li>
-              <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REGIMENTO DOS CURSOS DE APERFEIÇOAMENTO</a></li>
-              <li class="list-group-item"><a href="#" target="_blank" class="text-decoration-none text-dark"><i class="fa-regular fa-file me-2"></i> MANUAL DO ARTIGO CIENTÍFICO</a></li>
-            </ul>
-          </div><!-- Fim col-md-8 -->
+          <!-- Seção ARQUIVOS -->
+          <h2 class="fw-bold text-secondary mt-4 mb-3">ARQUIVOS</h2>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 25/07/2023 - Matrix curricular - Especialização em Direito Administrativo e Gestão Pública</a></li>
+            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 21/07/2022 - Edital para submissão de trabalhos - II COBPOS</a></li>
+            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> Resolução 001 CNE/CES - 06/04/2018</a></li>
+            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 12/06/2020 - Decisão ACP-RN</a></li>
+            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REGIMENTO GERAL</a></li>
+            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REGIMENTO DOS CURSOS DE APERFEIÇOAMENTO</a></li>
+            <li class="list-group-item"><a href="#" target="_blank" class="text-decoration-none text-dark"><i class="fa-regular fa-file me-2"></i> MANUAL DO ARTIGO CIENTÍFICO</a></li>
+          </ul>
+        </div><!-- Fim col-md-8 -->
 
-          <div class="col-md-4">
-            <section class="utilities">
-              <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
-              <div class="card border-0 shadow-sm">
-                <ul class="list-group list-group-flush text-center">
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
-                </ul>
-              </div>
-            </section>
-          </div><!-- Fim col-md-4 -->
+        <div class="col-md-4">
+          <section class="utilities">
+            <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
+            <div class="card border-0 shadow-sm">
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
+              </ul>
+            </div>
+          </section>
+        </div><!-- Fim col-md-4 -->
 
-        </div><!-- Fim row -->
-      </div><!-- Fim container -->
-    </section>
-  </main>
+      </div><!-- Fim row -->
+    </div><!-- Fim container -->
+  </section>
+</main>
 {% endblock content %}

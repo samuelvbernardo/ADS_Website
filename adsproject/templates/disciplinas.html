@@ -1,600 +1,603 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css %}
-  <link rel="stylesheet" href={% static "./css/disciplinas.css" %}>
-{% endblock css %}
+{% block title %}Disciplinas | ADS{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/disciplinas.css' %}">
+{% endblock %}
+
 
 {% block content %}
-  <main>
-    <section class="bg-light py-5">
-      <div class="container">
-        <!-- Row principal -->
-        <div class="row">
+<main>
+  <section class="bg-light py-5">
+    <div class="container">
+      <!-- Row principal -->
+      <div class="row">
 
-          <!-- COLUNA PRINCIPAL (col-md-8) -->
-          <div class="col-md-8">
-            <!-- Título principal -->
-            <h1 class="mb-5 text-primary fw-bold">
-              Estrutura
-              <span class="text-secondary">Curricular</span>
-            </h1>
+        <!-- COLUNA PRINCIPAL (col-md-8) -->
+        <div class="col-md-8">
+          <!-- Título principal -->
+          <h1 class="mb-5 text-primary fw-bold">
+            Estrutura
+            <span class="text-secondary">Curricular</span>
+          </h1>
 
-            <!-- ========== 1º Período ========== -->
-            <div class="mb-5">
-              <h3 class="text-primary fw-bold mb-3">1º Período</h3>
-              <div class="row row-cols-1 gy-3"><!-- gy-3 = espaçamento vertical entre cards -->
+          <!-- ========== 1º Período ========== -->
+          <div class="mb-5">
+            <h3 class="text-primary fw-bold mb-3">1º Período</h3>
+            <div class="row row-cols-1 gy-3"><!-- gy-3 = espaçamento vertical entre cards -->
 
-                <!-- Programação Estruturada -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/sormany.png" alt="Professor Sormany" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Programação Estruturada</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Sormany
-                        </div>
+              <!-- Programação Estruturada -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="{% static 'assets/teacher/sormany.png' %}" alt="Professor Sormany" class="subject-img rounded" />
                       </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Engenharia de Requisitos -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Engenharia de Requisitos</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Angélica
-                        </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Programação Estruturada</div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Inglês Instrumental -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/sem-foto.png" alt="Professora Dilma - Sem Foto" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Inglês Instrumental</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Dilma
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Arquitetura e Organização de Computadores -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/thiago-laurentino.png" alt="Professor Thiago Laurentino" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">
-                            Arquitetura e Organização de Computadores
-                          </div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Thiago Laurentino
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Fundamentos da Matemática e Lógica -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/janne.png" alt="Professora Janne" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Fundamentos da Matemática e Lógica</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Janne
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- fim 1º Período -->
-
-
-            <!-- ========== 2º Período ========== -->
-            <div class="mb-5">
-              <h3 class="text-primary fw-bold mb-3">2º Período</h3>
-              <div class="row row-cols-1 gy-3">
-                <!-- Extensão 1 -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/roberta.png" alt="Professora Roberta" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Extensão 1</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Roberta
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Fundamentos de Administração e Finanças -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/roberta.png" alt="Professora Roberta" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">
-                            Fundamentos de Administração e Finanças
-                          </div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Roberta
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Programação OO -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/pablo-roberto.png" alt="Professor Pablo Roberto" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">
-                            Programação Orientada a Objetos (OO)
-                          </div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Pablo Roberto
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Direitos Humanos -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/flavio.png" alt="Professor Flávio" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Direitos Humanos</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Flávio
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- (Eletiva) Autoria Web -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/keila.png" alt="Professora Keila" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">(Eletiva) Autoria Web</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Keila
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Engenharia de Software -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/keila.png" alt="Professora Keila" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Engenharia de Software</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Keila
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- fim 2º Período -->
-
-            <!-- ========== 3º Período ========== -->
-            <div class="mb-5">
-              <h3 class="text-primary fw-bold mb-3">3º Período</h3>
-              <div class="row row-cols-1 gy-3">
-                <!-- Extensão 2 -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/jose-neto.png" alt="Professor José Neto" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Extensão 2</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          José Neto
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Estrutura de Dados -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/jose-neto.png" alt="Professor José Neto" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Estrutura de Dados</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          José Neto
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Desenvolvimento Web 1 -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/jose-matheus.png" alt="Professor José Matheus" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Desenvolvimento Web 1</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          José Matheus
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Banco de Dados 1 -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/keila.png" alt="Professora Keila" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Banco de Dados 1</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Keila
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Laboratório de Redes -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/jose-neto.png" alt="Professor José Neto" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Laboratório de Redes</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          José Neto
-                        </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Sormany
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div><!-- fim 3º Período -->
 
-            <!-- ========== 4º Período ========== -->
-            <div class="mb-5">
-              <h3 class="text-primary fw-bold mb-3">4º Período</h3>
-              <div class="row row-cols-1 gy-3">
-                <!-- Design de Interação e UX -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Design de Interação e UX</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Angélica
-                        </div>
+              <!-- Engenharia de Requisitos -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Engenharia de Requisitos</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Angélica
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- Desenvolvimento Web 2 -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/jose-matheus.png" alt="Professor José Matheus" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Desenvolvimento Web 2</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          José Matheus
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Banco de dados 2 -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/keila.png" alt="Professor Keila" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Banco de dados 2</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Keila
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Desenvolvimento Mobile -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/allyson.png" alt="Professor Allyson" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Desenvolvimento Mobile</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Allyson
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- (Eletiva) Desenvolvimento de Jogos -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/allyson.png" alt="Professor Allyson" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">(Eletiva) Desenvolvimento de Jogos</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Allyson
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Métodos Avançados de Programação -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/pablo-roberto.png" alt="Professor Pablo Roberto" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Métodos Avançados de Programação</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Pablo Roberto
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
-            </div><!-- fim 4º Período -->
 
-            <!-- ========== 5º Período ========== -->
-            <div class="mb-5">
-              <h3 class="text-primary fw-bold mb-3">5º Período</h3>
-              <div class="row row-cols-1 gy-3">
-                <!-- Estágio Supervisionado -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Estágio Supervisionado</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Angélica
-                        </div>
+              <!-- Inglês Instrumental -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/sem-foto.png" alt="Professora Dilma - Sem Foto" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Inglês Instrumental</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Dilma
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- Projeto de BD -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/pablo-roberto.png" alt="Professor Pablo Roberto" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Projeto de BD</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Pablo Roberto
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Projeto Web -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/jose-matheus.png" alt="Professor José Matheus" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Projeto Web</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          José Matheus
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Projeto UX -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Projeto UX</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Angélica
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Projeto Engenharia de Software -->
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold">Projeto Engenharia de Software</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          Angélica
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
-            </div><!-- fim 5º Período -->
-          </div><!-- Fim col-md-8 -->
 
-          <!-- SIDEBAR (col-md-4) -->
-          <div class="col-md-4">
-            <h5 class="fw-bold mb-3">UTILIDADES</h5>
-            <div class="card border-0 shadow-sm">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Notícias</li>
-                <li class="list-group-item">Revista CODPIx</li>
-                <li class="list-group-item">Downloads</li>
-                <li class="list-group-item">Biblioteca</li>
-                <li class="list-group-item">Trabalhe Conosco</li>
-                <li class="list-group-item">Ouvidoria</li>
-                <li class="list-group-item">Matrícula Acadêmica</li>
-                <li class="list-group-item">Calendário Acadêmico</li>
-              </ul>
+              <!-- Arquitetura e Organização de Computadores -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/thiago-laurentino.png" alt="Professor Thiago Laurentino" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">
+                          Arquitetura e Organização de Computadores
+                        </div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Thiago Laurentino
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fundamentos da Matemática e Lógica -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/janne.png" alt="Professora Janne" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Fundamentos da Matemática e Lógica</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Janne
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
-          </div><!-- Fim col-md-4 -->
+          </div><!-- fim 1º Período -->
 
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-    </section>
-  </main>
+
+          <!-- ========== 2º Período ========== -->
+          <div class="mb-5">
+            <h3 class="text-primary fw-bold mb-3">2º Período</h3>
+            <div class="row row-cols-1 gy-3">
+              <!-- Extensão 1 -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/roberta.png" alt="Professora Roberta" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Extensão 1</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Roberta
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fundamentos de Administração e Finanças -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/roberta.png" alt="Professora Roberta" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">
+                          Fundamentos de Administração e Finanças
+                        </div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Roberta
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Programação OO -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/pablo-roberto.png" alt="Professor Pablo Roberto" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">
+                          Programação Orientada a Objetos (OO)
+                        </div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Pablo Roberto
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Direitos Humanos -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/flavio.png" alt="Professor Flávio" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Direitos Humanos</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Flávio
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- (Eletiva) Autoria Web -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/keila.png" alt="Professora Keila" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">(Eletiva) Autoria Web</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Keila
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Engenharia de Software -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/keila.png" alt="Professora Keila" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Engenharia de Software</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Keila
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- fim 2º Período -->
+
+          <!-- ========== 3º Período ========== -->
+          <div class="mb-5">
+            <h3 class="text-primary fw-bold mb-3">3º Período</h3>
+            <div class="row row-cols-1 gy-3">
+              <!-- Extensão 2 -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/jose-neto.png" alt="Professor José Neto" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Extensão 2</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        José Neto
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Estrutura de Dados -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/jose-neto.png" alt="Professor José Neto" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Estrutura de Dados</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        José Neto
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Desenvolvimento Web 1 -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/jose-matheus.png" alt="Professor José Matheus" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Desenvolvimento Web 1</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        José Matheus
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Banco de Dados 1 -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/keila.png" alt="Professora Keila" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Banco de Dados 1</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Keila
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Laboratório de Redes -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/jose-neto.png" alt="Professor José Neto" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Laboratório de Redes</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        José Neto
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- fim 3º Período -->
+
+          <!-- ========== 4º Período ========== -->
+          <div class="mb-5">
+            <h3 class="text-primary fw-bold mb-3">4º Período</h3>
+            <div class="row row-cols-1 gy-3">
+              <!-- Design de Interação e UX -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Design de Interação e UX</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Angélica
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Desenvolvimento Web 2 -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/jose-matheus.png" alt="Professor José Matheus" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Desenvolvimento Web 2</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        José Matheus
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Banco de dados 2 -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/keila.png" alt="Professor Keila" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Banco de dados 2</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Keila
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Desenvolvimento Mobile -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/allyson.png" alt="Professor Allyson" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Desenvolvimento Mobile</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Allyson
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- (Eletiva) Desenvolvimento de Jogos -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/allyson.png" alt="Professor Allyson" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">(Eletiva) Desenvolvimento de Jogos</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Allyson
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Métodos Avançados de Programação -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/pablo-roberto.png" alt="Professor Pablo Roberto" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Métodos Avançados de Programação</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Pablo Roberto
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- fim 4º Período -->
+
+          <!-- ========== 5º Período ========== -->
+          <div class="mb-5">
+            <h3 class="text-primary fw-bold mb-3">5º Período</h3>
+            <div class="row row-cols-1 gy-3">
+              <!-- Estágio Supervisionado -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Estágio Supervisionado</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Angélica
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Projeto de BD -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/pablo-roberto.png" alt="Professor Pablo Roberto" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Projeto de BD</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Pablo Roberto
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Projeto Web -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/jose-matheus.png" alt="Professor José Matheus" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Projeto Web</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        José Matheus
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Projeto UX -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Projeto UX</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Angélica
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Projeto Engenharia de Software -->
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="../assets/teacher/angelica.png" alt="Professora Angélica" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">Projeto Engenharia de Software</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        Angélica
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- fim 5º Período -->
+        </div><!-- Fim col-md-8 -->
+
+        <!-- SIDEBAR (col-md-4) -->
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3">UTILIDADES</h5>
+          <div class="card border-0 shadow-sm">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Notícias</li>
+              <li class="list-group-item">Revista CODPIx</li>
+              <li class="list-group-item">Downloads</li>
+              <li class="list-group-item">Biblioteca</li>
+              <li class="list-group-item">Trabalhe Conosco</li>
+              <li class="list-group-item">Ouvidoria</li>
+              <li class="list-group-item">Matrícula Acadêmica</li>
+              <li class="list-group-item">Calendário Acadêmico</li>
+            </ul>
+          </div>
+        </div><!-- Fim col-md-4 -->
+
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section>
+</main>
 {% endblock content %}

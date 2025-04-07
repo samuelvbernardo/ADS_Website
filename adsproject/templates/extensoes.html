@@ -1,91 +1,94 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css %}
-  <link rel="stylesheet" href={% static "./css/extensoes.css" %}>
-{% endblock css %}
+{% block title %}Extensões | ADS{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/extensoes.css' %}">
+{% endblock %}
 
 {% block content %}
-  <main>
-    <section class="bg-light py-4">
-      <div class="container">
-        <div class="row">
+<main>
+  <section class="bg-light py-4">
+    <div class="container">
+      <div class="row">
 
-          <!-- Coluna principal -->
-          <div class="col-md-8">
-            <h2>Extensões do Curso de Análise e Desenvolvimento de Sistemas</h2>
-            <p>Descubra as extensões atuais e futuras, incluindo informações sobre professores e temas.</p>
+        <!-- Coluna principal -->
+        <div class="col-md-8">
+          <h2>Extensões do Curso de Análise e Desenvolvimento de Sistemas</h2>
+          <p>Descubra as extensões atuais e futuras, incluindo informações sobre professores e temas.</p>
 
-            <!-- Bloco branco com título "Extensões Atuais" -->
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-body bg-white">
-                <h4 class="mb-4">Extensões Atuais</h4>
+          <!-- Bloco branco com título "Extensões Atuais" -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body bg-white">
+              <h4 class="mb-4">Extensões Atuais</h4>
 
-                <!-- Cartão cinza 1 -->
-                <div class="card mb-3 bg-light border-0 shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Desenvolvimento Web Avançado</h5>
-                    <p class="card-text">Professor: Prof. João Silva</p>
-                    <p class="card-text">Assunto: Django com REST e React</p>
-                  </div>
-                </div>
-
-                <!-- Cartão cinza 2 -->
-                <div class="card mb-3 bg-light border-0 shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Inteligência Artificial</h5>
-                    <p class="card-text">Professor: Prof. Maria Oliveira</p>
-                    <p class="card-text">Assunto: Conceitos e Aplicações de Machine Learning</p>
-                  </div>
+              <!-- Cartão cinza 1 -->
+              <div class="card mb-3 bg-light border-0 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Desenvolvimento Web Avançado</h5>
+                  <p class="card-text">Professor: Prof. João Silva</p>
+                  <p class="card-text">Assunto: Django com REST e React</p>
                 </div>
               </div>
-            </div>
 
-            <!-- Bloco branco com título "Extensões Futuras" -->
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-body bg-white">
-                <h4 class="mb-4">Extensões Futuras</h4>
-
-                <!-- Cartão cinza 1 -->
-                <div class="card mb-3 bg-light border-0 shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Desenvolvimento Mobile</h5>
-                    <p class="card-text">Professor: Prof. Carlos Pereira</p>
-                    <p class="card-text">Assunto: Aplicações com Flutter e Dart</p>
-                  </div>
-                </div>
-
-                <!-- Cartão cinza 2 -->
-                <div class="card mb-3 bg-light border-0 shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">Big Data e Analytics</h5>
-                    <p class="card-text">Professor: Prof. Ana Costa</p>
-                    <p class="card-text">Assunto: Análise de dados com Python</p>
-                  </div>
+              <!-- Cartão cinza 2 -->
+              <div class="card mb-3 bg-light border-0 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Inteligência Artificial</h5>
+                  <p class="card-text">Professor: Prof. Maria Oliveira</p>
+                  <p class="card-text">Assunto: Conceitos e Aplicações de Machine Learning</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <section class="utilities">
-              <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
-              <div class="card border-0 shadow-sm">
-                <ul class="list-group list-group-flush text-center">
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
-                  <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
-                </ul>
+          <!-- Bloco branco com título "Extensões Futuras" -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body bg-white">
+              <h4 class="mb-4">Extensões Futuras</h4>
+
+              <!-- Cartão cinza 1 -->
+              <div class="card mb-3 bg-light border-0 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Desenvolvimento Mobile</h5>
+                  <p class="card-text">Professor: Prof. Carlos Pereira</p>
+                  <p class="card-text">Assunto: Aplicações com Flutter e Dart</p>
+                </div>
               </div>
-            </section>
-          </div><!-- Fim col-md-4 -->
+
+              <!-- Cartão cinza 2 -->
+              <div class="card mb-3 bg-light border-0 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Big Data e Analytics</h5>
+                  <p class="card-text">Professor: Prof. Ana Costa</p>
+                  <p class="card-text">Assunto: Análise de dados com Python</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="col-md-4">
+          <section class="utilities">
+            <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
+            <div class="card border-0 shadow-sm">
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
+              </ul>
+            </div>
+          </section>
+        </div><!-- Fim col-md-4 -->
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 {% endblock content %}
