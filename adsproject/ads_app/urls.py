@@ -1,7 +1,11 @@
-from django.urls import path 
-from django.conf.urls.static import static  
-from django.conf import settings
+from django.urls import path
+from .views import *
 
 urlpatterns = [
-    
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', IndexView.as_view(), name='index'),
+    path('documentos/', DocumentosView.as_view(), name='documentos'),
+    path('disciplinas/', DisciplinasView.as_view(), name='disciplinas'),
+    path('noticias/', NoticiasView.as_view(), name='noticias'),
+    path('projetos/', ProjetosView.as_view(), name='projetos'),
+    path('extensoes/', ExtensoesView.as_view(), name='extensoes'),
+]

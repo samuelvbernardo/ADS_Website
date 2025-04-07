@@ -1,195 +1,193 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}Início | ADS{% endblock %}
+
 {% block content %}
-    <main>
-        <section class="row d-flex justify-content-center align-items-center text-center bg-title m-0">
-            <div class="col-12 col-md-10 col-lg-8 d-flex flex-column justify-content-center align-items-center">
-                <h1 class="fw-bold fs-0 fs-sm-2 fs-md-4 text-white">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</h1>
+<main>
+    <section class="row d-flex justify-content-center align-items-center text-center bg-title m-0">
+        <div class="col-12 col-md-10 col-lg-8 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="fw-bold fs-0 fs-sm-2 fs-md-4 text-white">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</h1>
 
-                <div class="bg-orange p-1 my-3 w-75"></div> 
+            <div class="bg-orange p-1 my-3 w-75"></div>
 
-                <div class="mb-3"><p class="fs-5 text-white">Tecnólogo - Noturno - 5 semestres</p></div>
-
-                <button class="btn text-white bg-transparent-to-orange border-white border-2 px-4">Acesse aqui</button>
+            <div class="mb-3">
+                <p class="fs-5 text-white">Tecnólogo - Noturno - 5 semestres</p>
             </div>
-        </section>
 
-        <section class="row d-flex justify-content-center align-items-center bg-light m-0">
-            <div class="col-12 col-md-11 col-lg-9 d-flex flex-column justify-content-center align-items-center">
-                <h1 class="fw-bold fs-2 text-primary my-4 py-4">Objetivo
-                    <span class="polygon-curso">Curso</span>
-                </h1>
+            <button class="btn text-white bg-transparent-to-orange border-white border-2 px-4">Acesse aqui</button>
+        </div>
+    </section>
 
-                <p class="fs-5 d-flex text-center text-md-start">O curso de Análise e Desenvolvimento de Sistemas tem como objetivo formar profissionais capazes de
-                analisar, projetar, desenvolver, implementar e manter sistemas de informação, com conhecimentos de 
+    <section class="row d-flex justify-content-center align-items-center bg-light m-0">
+        <div class="col-12 col-md-11 col-lg-9 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="fw-bold fs-2 text-primary my-4 py-4">Objetivo
+                <span class="polygon-curso">Curso</span>
+            </h1>
+
+            <p class="fs-5 d-flex text-center text-md-start">O curso de Análise e Desenvolvimento de Sistemas tem como objetivo formar profissionais capazes de
+                analisar, projetar, desenvolver, implementar e manter sistemas de informação, com conhecimentos de
                 programação, banco de dados, redes, engenharia de software, sistemas operacionais, entre outros.</p>
 
-                <button class="btn btn-expand btn-secondary no-border text-white px-5 py-3 my-3 w-auto d-flex gap-2">
-                    <i class="bi bi-filetype-pdf"></i>Matriz Curricular
-                </button>
+            <button class="btn btn-expand btn-secondary no-border text-white px-5 py-3 my-3 w-auto d-flex gap-2">
+                <i class="bi bi-filetype-pdf"></i>Matriz Curricular
+            </button>
 
-                <div class="container mt-4 mb-2">
-                    <div class="row justify-content-center g-3"> 
-                        <div class="col-12 col-md-8 col-lg-6">
-                            <ul class="p-3 p-md-5 bg-white shadow-sm d-flex flex-column gap-2">
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-currency-dollar"></i>
-                                    <span class="fw-bold">Mátricula:</span>
-                                    <span class="text-break">R$ 721,00</span>
-                                </li>
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-currency-dollar"></i>
-                                    <span class="fw-bold">Mensalidade:</span>
-                                    <span class="text-break">R$ 703,00</span>
-                                </li>
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-clock-fill"></i>
-                                    <span class="fw-bold">Turno:</span>
-                                    <span class="text-break">Nortuno</span>
-                                </li>
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-mortarboard-fill"></i>
-                                    <span class="fw-bold">Duração:</span>
-                                    <span class="text-break">2 anos e meio</span>
-                                </li>
-                            </ul>
-                        </div>
-                
-                        <div class="col-12 col-md-8 col-lg-6">
-                            <ul class="p-3 p-md-5 bg-white shadow-sm d-flex flex-column gap-2">
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                    <span class="fw-bold">Local:</span>
-                                    <span class="text-break">Patos, Paraíba, Brasil</span>
-                                </li>
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-person-fill"></i>
-                                    <span class="fw-bold">Coordenador:</span>
-                                    <span class="text-break">Sormany Silva Dantas</span>
-                                </li>
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-envelope-fill"></i>
-                                    <span class="fw-bold">Email:</span>
-                                    <span class="text-break">coordenacao@ads.fiponline.edu.br</span>
-                                </li>
-                                <li class="list-unstyled d-flex flex-wrap gap-1">
-                                    <i class="bi bi-phone-fill"></i>
-                                    <span class="fw-bold">Contato:</span>
-                                    <span class="text-break">(83) 3421-4047</span>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="container mt-4 mb-2">
+                <div class="row justify-content-center g-3">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <ul class="p-3 p-md-5 bg-white shadow-sm d-flex flex-column gap-2">
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-currency-dollar"></i>
+                                <span class="fw-bold">Mátricula:</span>
+                                <span class="text-break">R$ 721,00</span>
+                            </li>
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-currency-dollar"></i>
+                                <span class="fw-bold">Mensalidade:</span>
+                                <span class="text-break">R$ 703,00</span>
+                            </li>
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-clock-fill"></i>
+                                <span class="fw-bold">Turno:</span>
+                                <span class="text-break">Nortuno</span>
+                            </li>
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                <span class="fw-bold">Duração:</span>
+                                <span class="text-break">2 anos e meio</span>
+                            </li>
+                        </ul>
                     </div>
-                </div>
 
-                <button class="btn btn-expand btn-primary no-border text-white px-5 py-3 mt-3 mb-5 w-auto d-flex gap-2">
-                    <i class="bi bi-filetype-pdf"></i>Inscreva-se já!
-                </button>
-            </div>
-        </section>
-
-        <section class="bg-white">
-            <div class="container py-5">
-                <div class="ratio ratio-16x9">
-                    <iframe 
-                        src="https://www.youtube.com/embed/iYg5at4OXiE?si=fSIppt9hkliDTPkW" 
-                        title="Título do vídeo" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen 
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-
-        <section class="d-flex justify-content-center align-items-center bg-light m-0 pb-5">
-            <div class="d-flex flex-column justify-content-center align-items-center pb-5">
-                <h1 class="fw-bold fs-2 text-primary my-4 py-4">Área
-                    <span class="polygon-curso">Atuação</span>
-                </h1>
-
-                <div class="container">
-                    <div class="d-flex align-items-stretch justify-content-center">
-                        <ul class="col-10 list-unstyled d-flex flex-wrap flex-lg-nowrap justify-content-center gap-3">
-                            <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
-                                <img class="rounded-top-3 w-100" src={% static "./assets/image-1.png" %} alt="Analista de sistemas">
-                                <h5 class="pt-2 px-2 fw-bold">Analista de sistemas</h5>
-                                <p class="px-2 flex-grow-1">Profissional que analisa e desenvolve softwares e programas. Mapeia processos e realiza 
-                                modelagem de dados, visando estudar e implementar sistemas.</p>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <ul class="p-3 p-md-5 bg-white shadow-sm d-flex flex-column gap-2">
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span class="fw-bold">Local:</span>
+                                <span class="text-break">Patos, Paraíba, Brasil</span>
                             </li>
-                
-                            <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
-                                <img class="rounded-top-3 w-100" src={% static "./assets/image-2.png" %} alt="Gestor de Projetos de sistemas">
-                                <h5 class="pt-2 px-2 fw-bold">Gestor de Projetos de sistemas</h5>
-                                <p class="px-2 flex-grow-1">Faz a interligação entre a administração da empresa e a área de computação.</p>
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-person-fill"></i>
+                                <span class="fw-bold">Coordenador:</span>
+                                <span class="text-break">Sormany Silva Dantas</span>
                             </li>
-                
-                            <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
-                                <img class="rounded-top-3 w-100" src={% static "./assets/image-3.png" %} alt="Técnico de desenvolvimento de softwares e aplicativos">
-                                <h5 class="pt-2 px-2 fw-bold">Técnico de desenvolvimento de softwares e aplicativos</h5>
-                                <p class="px-2 flex-grow-1">Elabora programas e jogos para computadores e celulares.</p>
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-envelope-fill"></i>
+                                <span class="fw-bold">Email:</span>
+                                <span class="text-break">coordenacao@ads.fiponline.edu.br</span>
                             </li>
-                
-                            <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
-                                <img class="rounded-top-3 w-100" src={% static "./assets/image-4.png" %} alt="Gerente de projetos de sistemas">
-                                <h5 class="pt-2 px-2 fw-bold">Gerente de projetos de sistemas</h5>
-                                <p class="px-2 flex-grow-1">É responsável por gerenciar o projeto em todos seus estágios.</p>
+                            <li class="list-unstyled d-flex flex-wrap gap-1">
+                                <i class="bi bi-phone-fill"></i>
+                                <span class="fw-bold">Contato:</span>
+                                <span class="text-break">(83) 3421-4047</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="row d-flex justify-content-center align-items-center m-0">
-            <div class="col-10 d-flex flex-column justify-content-center align-items-center">
-                <h1 class="fw-bold fs-2 text-primary my-4 py-4">Perfil 
-                    <span class="polygon-curso">Profissional</span>
-                </h1>
+            <button class="btn btn-expand btn-primary no-border text-white px-5 py-3 mt-3 mb-5 w-auto d-flex gap-2">
+                <i class="bi bi-filetype-pdf"></i>Inscreva-se já!
+            </button>
+        </div>
+    </section>
 
-                <p class="fs-lg-5 fs-6">O profissional formado em Análise e Desenvolvimento de Sistemas é capaz de analisar, projetar, desenvolver, 
-                    implementar e manter sistemas de informação, com conhecimentos de programação, banco de dados, redes, engenharia 
-                    de software, sistemas operacionais, entre outros.
-                </p>
+    <section class="bg-white">
+        <div class="container py-5">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/iYg5at4OXiE?si=fSIppt9hkliDTPkW" title="Título do vídeo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
-                <div class="container d-flex align-items-lg-start pb-4">
-                    <ul class="list-unstyled links-list-orange d-flex flex-column gap-2">
-                        <li><i class="bi bi-arrow-right me-2"></i>Análise de Requisitos</li>
-                        <li ><i class="bi bi-arrow-right me-2"></i>Modelagem de Sistemas</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Desenvolvimento e Integração</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Testes e Qualidade</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Suporte e Manutenção</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Banco de Dados</li>
+    <section class="d-flex justify-content-center align-items-center bg-light m-0 pb-5">
+        <div class="d-flex flex-column justify-content-center align-items-center pb-5">
+            <h1 class="fw-bold fs-2 text-primary my-4 py-4">Área
+                <span class="polygon-curso">Atuação</span>
+            </h1>
+
+            <div class="container">
+                <div class="d-flex align-items-stretch justify-content-center">
+                    <ul class="col-10 list-unstyled d-flex flex-wrap flex-lg-nowrap justify-content-center gap-3">
+                        <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
+                            <img class="rounded-top-3 w-100" src="{% static 'assets/image-1.png' %}" alt="Analista de sistemas">
+                            <h5 class="pt-2 px-2 fw-bold">Analista de sistemas</h5>
+                            <p class="px-2 flex-grow-1">Profissional que analisa e desenvolve softwares e programas. Mapeia processos e realiza
+                                modelagem de dados, visando estudar e implementar sistemas.</p>
+                        </li>
+
+                        <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
+                            <img class="rounded-top-3 w-100" src="{% static 'assets/image-2.png' %}" alt="Gestor de Projetos de sistemas">
+                            <h5 class="pt-2 px-2 fw-bold">Gestor de Projetos de sistemas</h5>
+                            <p class="px-2 flex-grow-1">Faz a interligação entre a administração da empresa e a área de computação.</p>
+                        </li>
+
+                        <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
+                            <img class="rounded-top-3 w-100" src="{% static 'assets/image-3.png' %}" alt="Técnico de desenvolvimento de softwares e aplicativos">
+                            <h5 class="pt-2 px-2 fw-bold">Técnico de desenvolvimento de softwares e aplicativos</h5>
+                            <p class="px-2 flex-grow-1">Elabora programas e jogos para computadores e celulares.</p>
+                        </li>
+
+                        <li class="col-12 col-md-5 col-lg-3 d-flex flex-column btn-expand bg-white border-bottom rounded-3">
+                            <img class="rounded-top-3 w-100" src="{% static 'assets/image-4.png' %}" alt="Gerente de projetos de sistemas">
+                            <h5 class="pt-2 px-2 fw-bold">Gerente de projetos de sistemas</h5>
+                            <p class="px-2 flex-grow-1">É responsável por gerenciar o projeto em todos seus estágios.</p>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="row d-flex justify-content-center align-items-center m-0 bg-light">
-            <div class=" col-10 d-flex flex-column justify-content-center align-items-center">
-                <h1 class="fw-bold fs-2 text-primary my-4 py-4">Estrutura
-                    <span class="polygon-curso">Curricular</span>
-                </h1>
+    <section class="row d-flex justify-content-center align-items-center m-0">
+        <div class="col-10 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="fw-bold fs-2 text-primary my-4 py-4">Perfil
+                <span class="polygon-curso">Profissional</span>
+            </h1>
 
-                <p class="fs-lg-5 fs-6">A estrutura curricular do curso de Análise e Desenvolvimento de Sistemas é composta 
-                    por disciplinas que abordam conteúdos de programação, banco de dados, redes, engenharia de software, 
-                    sistemas operacionais, entre outros. Confira algumas disciplinas do curso:
-                </p>
-    
-                <div class="container d-flex pb-4">
-                    <ul class="list-unstyled links-list-orange d-flex flex-column gap-2">
-                        <li><i class="bi bi-arrow-right me-2"></i>Programação Estrturada</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Programação Orientada a Objetos</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Engenharia de Software</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Desenvolvimento Web</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Desenvolvimento Mobile</li>
-                        <li><i class="bi bi-arrow-right me-2"></i>Empreendedorismo</li>
-                    </ul>
-                </div>
+            <p class="fs-lg-5 fs-6">O profissional formado em Análise e Desenvolvimento de Sistemas é capaz de analisar, projetar, desenvolver,
+                implementar e manter sistemas de informação, com conhecimentos de programação, banco de dados, redes, engenharia
+                de software, sistemas operacionais, entre outros.
+            </p>
+
+            <div class="container d-flex align-items-lg-start pb-4">
+                <ul class="list-unstyled links-list-orange d-flex flex-column gap-2">
+                    <li><i class="bi bi-arrow-right me-2"></i>Análise de Requisitos</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Modelagem de Sistemas</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Desenvolvimento e Integração</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Testes e Qualidade</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Suporte e Manutenção</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Banco de Dados</li>
+                </ul>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section class="row d-flex justify-content-center align-items-center m-0 bg-light">
+        <div class=" col-10 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="fw-bold fs-2 text-primary my-4 py-4">Estrutura
+                <span class="polygon-curso">Curricular</span>
+            </h1>
+
+            <p class="fs-lg-5 fs-6">A estrutura curricular do curso de Análise e Desenvolvimento de Sistemas é composta
+                por disciplinas que abordam conteúdos de programação, banco de dados, redes, engenharia de software,
+                sistemas operacionais, entre outros. Confira algumas disciplinas do curso:
+            </p>
+
+            <div class="container d-flex pb-4">
+                <ul class="list-unstyled links-list-orange d-flex flex-column gap-2">
+                    <li><i class="bi bi-arrow-right me-2"></i>Programação Estruturada</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Programação Orientada a Objetos</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Engenharia de Software</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Desenvolvimento Web</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Desenvolvimento Mobile</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Empreendedorismo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
 
 {% endblock content %}
-    
