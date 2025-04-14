@@ -32,5 +32,12 @@ class ProjetosView(TemplateView):
     template_name = 'projetos.html'
 
 class MonitoriasView(TemplateView):
+    model = PostMonitoria
     template_name = "monitorias.html"
+    context_object_name = "monitorias"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['monitorias'] = PostMonitoria.objects.all()
+        return context
 
