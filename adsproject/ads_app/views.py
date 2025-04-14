@@ -23,3 +23,6 @@ class DocumentosView(TemplateView):
 class ProjetosView(TemplateView):
     template_name = 'projetos.html'
 
+class MonitoriasView(TemplateView):
+    template_name = "monitorias.html"
+
