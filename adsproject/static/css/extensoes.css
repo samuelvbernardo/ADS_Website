@@ -1,93 +1,3 @@
-:root {
-  --bs-primary: #000c49;
-  --bs-secondary: #ee7d14;
-  --btn-gray: #eeeeee;
-  --btn-blue: #000c49;
-}
-
-.text-primary {
-  color: var(--bs-primary) !important;
-}
-
-.text-secondary {
-  color: var(--bs-secondary) !important;
-}
-
-.border-primary {
-  border-color: var(--bs-primary) !important;
-}
-
-body {
-  font-family: inter;
-  margin: 0;
-  padding: 0;
-}
-
-.bg-title {
-  background-image: url(../assets/bg-title-index.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 432px;
-}
-
-.logo {
-  max-height: 2.2rem;
-}
-
-.bg-orange {
-  background-color: var(--bs-secondary);
-} 
-
-.btn-gray {
-  background-color: var(--btn-gray);
-}
-
-.navbar-list-orange li a:hover {
-  color: var(--bs-secondary);
-}
-
-.links-list-orange li {
-  transition: transform 0.3s;
-}
-
-.links-list-orange li:hover {
-  transform: translateX(5px);
-  color: var(--bs-secondary);
-}
-
-.btn-facebook:hover {
-  color: #3b5998;
-  cursor: pointer;
-}
-.btn-twitter-x:hover {
-  color: #3b3434;
-  cursor: pointer;
-}
-.btn-instagram:hover {
-  color: #e4405f;
-  cursor: pointer;
-}
-.btn-youtube:hover {
-  color: #cd201f;
-  cursor: pointer;
-}
-.btn-discord:hover {
-  color: #7289da;
-  cursor: pointer;
-}
-
-.btn-white-bg-orange:hover {
-  color: #fff;
-  background-color: var(--bs-secondary);
-}
-
-.btn-list-white-bg-orange li:hover {
-  color: #fff;
-  background-color: var(--bs-secondary);
-}
-
 /* ======== Estilização Geral ======== */
 .list-group-item {
   border-bottom: 1px solid #ddd !important;
@@ -135,12 +45,6 @@ body {
 .utilities .list-group-item:hover {
   background-color: #f5f5f5;
   color: var(--bs-secondary) !important;
-}
-
-.banner-extensions {
-  background: url("/assets/bg.png") no-repeat center center;
-  background-size: cover;
-  min-height: 150px;
 }
 
 .card.bg-light {
