@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Monitorias | ADS{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/monitorias.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<section class="bg-title text-white text-center py-5 d-flex align-items-center justify-content-center flex-column">
+  <h1 class="fw-bold fs-0">MONITORIAS</h1>
+  <div class="bg-orange p-1 my-3" style="width: 150px;"></div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="bg-light py-4">
+    <div class="container">
+      <div class="row">
+        <!-- Coluna Principal -->
+        <div class="col-md-8">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light rounded shadow-sm py-3 px-4 mb-4">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}" class="text-decoration-none text-primary">Início</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Monitorias</li>
+            </ol>
+          </nav>
+
+          <h2 class="mb-4 fw-bold text-dark">RESULTADOS PARA AS MONITORIAS</h2>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for i in "123456" %}
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img src="{% static 'assets/noticias/bg-monitorias.png' %}" class="card-img-top" alt="Monitoria">
+                <div class="card-body">
+                  <h5 class="card-title">Está aberta a monitoria de Programação Estrutura (Python)</h5>
+                  <p class="card-text small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Coluna Utilidades -->
+        <div class="col-md-4">
+          <section class="utilities">
+            <h2 class="fw-bold mb-3 text-primary">UTILIDADES</h2>
+            <div class="card border-0 shadow-sm">
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
