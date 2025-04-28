@@ -11,3 +11,26 @@ class PostDisciplinaAdmin(admin.ModelAdmin):
 class PostMonitoriaAdmin(admin.ModelAdmin):
     list_display = ('id', 'titulo_monitoria')
     list_filter = ('titulo_monitoria',)
+
+@admin.register(PostNoticia)
+class PostNoticiaAdmin(admin.ModelAdmin):
+    list_display = ('id', 'titulo_noticia', 'data_publicacao')
+    list_filter = ('data_publicacao', 'titulo_noticia')
+    search_fields = ('titulo_noticia', 'descricao_noticia')
+
+@admin.register(Extensao)
+class ExtensaoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nome_extensao', 'professor', 'assunto')
+    list_filter = ('nome_extensao', 'professor')
+    search_fields = ('nome_extensao', 'professor', 'assunto')
+
+@admin.register(Projeto)
+class ProjetoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nome_projeto')
+    list_filter = ('nome_projeto',)
+    search_fields = ('nome_projeto', 'descricao_projeto')
+
+@admin.register(Documentacao)
+class DocumentacaoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nome_arquivo', 'arquivo')
+    search_fields = ('nome_arquivo',)
