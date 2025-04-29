@@ -31,13 +31,13 @@
           <h2 class="mb-4 fw-bold text-dark">RESULTADOS PARA AS MONITORIAS</h2>
 
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            {% for monitoria in monitorias  %}
+            {% for monitoria in monitorias %}
             <div class="col">
               <div class="card h-100 shadow-sm">
                 <img src="{{ monitoria.img_monitoria.url }}" class="card-img-top" alt="Monitoria">
                 <div class="card-body">
                   <h5 class="card-title"> {{ monitoria.titulo_monitoria }} </h5>
-                  <p class="card-text small text-muted"> {{monitoria.descricao_resumida}} </p>
+                  <p class="card-text small text-muted mt-2"> {{monitoria.descricao_resumida}} </p>
                 </div>
               </div>
             </div>

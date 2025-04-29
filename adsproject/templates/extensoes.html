@@ -3,7 +3,6 @@
 
 {% block title %}Extensões | ADS{% endblock %}
 
-
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/extensoes.css' %}">
 {% endblock %}
@@ -14,7 +13,6 @@
   <div class="bg-orange p-1 my-3" style="width: 150px;"></div>
 </section>
 {% endblock %}
-
 
 {% block content %}
 <main>
@@ -27,57 +25,46 @@
           <h2>Extensões do Curso de Análise e Desenvolvimento de Sistemas</h2>
           <p>Descubra as extensões atuais e futuras, incluindo informações sobre professores e temas.</p>
 
-          <!-- Bloco branco com título "Extensões Atuais" -->
+          <!-- Extensões Atuais -->
           <div class="card border-0 shadow-sm mb-4">
             <div class="card-body bg-white">
               <h4 class="mb-4">Extensões Atuais</h4>
 
-              <!-- Cartão cinza 1 -->
+              {% for extensao in extensoes_atuais %}
               <div class="card mb-3 bg-light border-0 shadow-sm">
                 <div class="card-body">
-                  <h5 class="card-title">Desenvolvimento Web Avançado</h5>
-                  <p class="card-text">Professor: Prof. João Silva</p>
-                  <p class="card-text">Assunto: Django com REST e React</p>
+                  <h5 class="card-title">{{ extensao.nome_extensao }}</h5>
+                  <p class="card-text"><strong>Professor:</strong> {{ extensao.professor }}</p>
+                  <p class="card-text"><strong>Assunto:</strong> {{ extensao.assunto }}</p>
                 </div>
               </div>
-
-              <!-- Cartão cinza 2 -->
-              <div class="card mb-3 bg-light border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Inteligência Artificial</h5>
-                  <p class="card-text">Professor: Prof. Maria Oliveira</p>
-                  <p class="card-text">Assunto: Conceitos e Aplicações de Machine Learning</p>
-                </div>
-              </div>
+              {% empty %}
+              <p class="text-muted">Nenhuma extensão atual cadastrada.</p>
+              {% endfor %}
             </div>
           </div>
 
-          <!-- Bloco branco com título "Extensões Futuras" -->
+          <!-- Extensões Futuras -->
           <div class="card border-0 shadow-sm mb-4">
             <div class="card-body bg-white">
               <h4 class="mb-4">Extensões Futuras</h4>
 
-              <!-- Cartão cinza 1 -->
+              {% for extensao in extensoes_futuras %}
               <div class="card mb-3 bg-light border-0 shadow-sm">
                 <div class="card-body">
-                  <h5 class="card-title">Desenvolvimento Mobile</h5>
-                  <p class="card-text">Professor: Prof. Carlos Pereira</p>
-                  <p class="card-text">Assunto: Aplicações com Flutter e Dart</p>
+                  <h5 class="card-title">{{ extensao.nome_extensao }}</h5>
+                  <p class="card-text"><strong>Professor:</strong> {{ extensao.professor }}</p>
+                  <p class="card-text"><strong>Assunto:</strong> {{ extensao.assunto }}</p>
                 </div>
               </div>
-
-              <!-- Cartão cinza 2 -->
-              <div class="card mb-3 bg-light border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Big Data e Analytics</h5>
-                  <p class="card-text">Professor: Prof. Ana Costa</p>
-                  <p class="card-text">Assunto: Análise de dados com Python</p>
-                </div>
-              </div>
+              {% empty %}
+              <p class="text-muted">Nenhuma extensão futura cadastrada.</p>
+              {% endfor %}
             </div>
           </div>
         </div>
 
+        <!-- Sidebar Utilidades -->
         <div class="col-md-4">
           <section class="utilities">
             <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
@@ -94,9 +81,10 @@
               </ul>
             </div>
           </section>
-        </div><!-- Fim col-md-4 -->
+        </div>
+
       </div>
     </div>
   </section>
 </main>
-{% endblock content %}
+{% endblock %}

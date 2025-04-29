@@ -18,183 +18,67 @@
 <main>
   <section class="bg-light py-5">
     <div class="container">
-      <!-- Row principal -->
       <div class="row">
 
-        <!-- COLUNA PRINCIPAL (col-md-8) -->
+        <!-- COLUNA PRINCIPAL -->
         <div class="col-md-8">
-          <!-- Título principal -->
           <h1 class="mb-5 text-primary fw-bold">
             Estrutura
             <span class="text-secondary">Curricular</span>
           </h1>
 
-          <!-- ========== 1º Período ========== -->
+          <!-- Loop dinâmico dos períodos -->
+          {% for periodo in periodos %}
           <div class="mb-5">
-            <h3 class="text-primary fw-bold mb-3">1º Período</h3>
-            <div class="row row-cols-1 gy-3"><!-- gy-3 = espaçamento vertical entre cards -->
-
-              <!-- Programação Estruturada -->
+            <h3 class="text-primary fw-bold mb-3">{{ periodo }}º Período</h3>
+            <div class="row row-cols-1 gy-3">
               {% for disciplina in disciplinas %}
-                {% if disciplina.periodo == 1%}
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="{{ disciplina.img_professor.url }}" alt="" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold"> {{ disciplina.nome_disciplina }}</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          {{ disciplina.nome_professor}}
-                        </div>
+              {% if disciplina.periodo == periodo %}
+              <div class="col">
+                <div class="card shadow-sm border-0">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-sm-2">
+                        <img src="{{ disciplina.img_professor.url }}" alt="{{ disciplina.nome_professor }}" class="subject-img rounded" />
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="fw-semibold">{{ disciplina.nome_disciplina }}</div>
+                      </div>
+                      <div class="col-sm-4 text-end fw-semibold">
+                        {{ disciplina.nome_professor }}
                       </div>
                     </div>
                   </div>
                 </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div><!-- fim 1º Período -->
-
-          <div class="mb-5">
-            <h3 class="text-primary fw-bold mb-3">2º Período</h3>
-            <div class="row row-cols-1 gy-3"><!-- gy-3 = espaçamento vertical entre cards -->
-
-              <!-- Programação Estruturada -->
-              {% for disciplina in disciplinas %}
-                {% if disciplina.periodo == 2%}
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="{{ disciplina.img_professor.url }}" alt="" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold"> {{ disciplina.nome_disciplina }}</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          {{ disciplina.nome_professor}}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
+              </div>
+              {% endif %}
               {% endfor %}
             </div>
           </div>
+          {% endfor %}
+        </div>
 
-          <div class="mb-5">
-            <h3 class="text-primary fw-bold mb-3">3º Período</h3>
-            <div class="row row-cols-1 gy-3"><!-- gy-3 = espaçamento vertical entre cards -->
-
-              <!-- Programação Estruturada -->
-              {% for disciplina in disciplinas %}
-                {% if disciplina.periodo == 3%}
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="{{ disciplina.img_professor.url }}" alt="" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold"> {{ disciplina.nome_disciplina }}</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          {{ disciplina.nome_professor}}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-
-          <div class="mb-5">
-            <h3 class="text-primary fw-bold mb-3">4º Período</h3>
-            <div class="row row-cols-1 gy-3"><!-- gy-3 = espaçamento vertical entre cards -->
-
-              <!-- Programação Estruturada -->
-              {% for disciplina in disciplinas %}
-                {% if disciplina.periodo == 4%}
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="{{ disciplina.img_professor.url }}" alt="" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold"> {{ disciplina.nome_disciplina }}</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          {{ disciplina.nome_professor}}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-
-          <div class="mb-5">
-            <h3 class="text-primary fw-bold mb-3">5º Período</h3>
-            <div class="row row-cols-1 gy-3"><!-- gy-3 = espaçamento vertical entre cards -->
-
-              <!-- Programação Estruturada -->
-              {% for disciplina in disciplinas %}
-                {% if disciplina.periodo == 5%}
-                <div class="col">
-                  <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-sm-2">
-                          <img src="{{ disciplina.img_professor.url }}" alt="" class="subject-img rounded" />
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="fw-semibold"> {{ disciplina.nome_disciplina }}</div>
-                        </div>
-                        <div class="col-sm-4 text-end fw-semibold">
-                          {{ disciplina.nome_professor}}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-        </div><!-- Fim col-md-8 -->
-
-        <!-- SIDEBAR (col-md-4) -->
+        <!-- SIDEBAR (UTILIDADES) -->
         <div class="col-md-4">
-          <h5 class="fw-bold mb-3">UTILIDADES</h5>
-          <div class="card border-0 shadow-sm">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Notícias</li>
-              <li class="list-group-item">Revista CODPIx</li>
-              <li class="list-group-item">Downloads</li>
-              <li class="list-group-item">Biblioteca</li>
-              <li class="list-group-item">Trabalhe Conosco</li>
-              <li class="list-group-item">Ouvidoria</li>
-              <li class="list-group-item">Matrícula Acadêmica</li>
-              <li class="list-group-item">Calendário Acadêmico</li>
-            </ul>
-          </div>
-        </div><!-- Fim col-md-4 -->
+          <section class="utilities">
+            <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
+            <div class="card border-0 shadow-sm">
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
 
       </div><!-- /.row -->
     </div><!-- /.container -->
   </section>
 </main>
-{% endblock content %}
+{% endblock %}

@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ] + LOCAL_APPS
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'adsproject.wsgi.application'  
+WSGI_APPLICATION = 'adsproject.wsgi.application'
 
 
 DATABASES = {

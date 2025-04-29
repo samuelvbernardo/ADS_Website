@@ -12,6 +12,13 @@ class PostMonitoriaAdmin(admin.ModelAdmin):
     list_display = ('id', 'titulo_monitoria')
     list_filter = ('titulo_monitoria',)
 
+@admin.register(Evento)
+class EventoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nome_evento', 'link_evento', 'data_evento')
+    search_fields = ('nome_evento',)
+    list_filter = ('data_evento',)
+
+
 @admin.register(PostNoticia)
 class PostNoticiaAdmin(admin.ModelAdmin):
     list_display = ('id', 'titulo_noticia', 'data_publicacao')
@@ -20,9 +27,10 @@ class PostNoticiaAdmin(admin.ModelAdmin):
 
 @admin.register(Extensao)
 class ExtensaoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome_extensao', 'professor', 'assunto')
-    list_filter = ('nome_extensao', 'professor')
+    list_display = ('id', 'nome_extensao', 'professor', 'assunto', 'tipo')
+    list_filter = ('tipo', 'nome_extensao', 'professor')
     search_fields = ('nome_extensao', 'professor', 'assunto')
+
 
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
@@ -32,5 +40,7 @@ class ProjetoAdmin(admin.ModelAdmin):
 
 @admin.register(Documentacao)
 class DocumentacaoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome_arquivo', 'arquivo')
-    search_fields = ('nome_arquivo',)
+    list_display = ('id', 'nome_arquivo', 'tipo', 'arquivo')  # Adicionei o 'tipo' para aparecer na lista
+    list_filter = ('tipo',)  # Filtro lateral para escolher Requerimento ou Arquivo
+    search_fields = ('nome_arquivo',)  # Permite buscar pelo nome do arquivo
+

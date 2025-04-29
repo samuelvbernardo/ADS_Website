@@ -18,10 +18,11 @@
 <main>
   <section class="bg-light py-5">
     <div class="container">
-      <div class="row"><!-- Row principal -->
+      <div class="row">
 
-        <!-- COLUNA ESQUERDA (DOCUMENTOS) -->
+        <!-- COLUNA ESQUERDA -->
         <div class="col-md-8">
+
           <!-- Título principal -->
           <h1 class="fw-bold text-primary mb-4">DOCUMENTOS IMPORTANTES</h1>
 
@@ -35,11 +36,15 @@
             </button>
             <div id="documents-requirements" class="collapse mt-2 p-2 border rounded bg-white">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 21/07/2022 - Edital para submissão de trabalhos - II COBPOS</a></li>
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - CURSAR COMPONENTE CURRICULAR EM OUTRA TURMA</a></li>
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - DISPENSA DE DISCIPLINA</a></li>
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - SOLICITAÇÃO DE DOCUMENTOS - UNIFIP</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REQUERIMENTO - TRANCAMENTO DE MATRÍCULA DE CURSO</a></li>
+                {% for requerimento in requerimentos %}
+                <li class="list-group-item border-bottom">
+                  <a href="{{ requerimento.arquivo.url }}" class="text-decoration-none" target="_blank">
+                    <i class="fa-regular fa-file me-2"></i> {{ requerimento.nome_arquivo }}
+                  </a>
+                </li>
+                {% empty %}
+                <li class="list-group-item">Nenhum requerimento encontrado.</li>
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -51,11 +56,15 @@
             </button>
             <div id="documents-events" class="collapse mt-2 p-2 border rounded bg-white">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS CONNECTION 2022</a></li>
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022</a></li>
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - PROGRAMAÇÃO</a></li>
-                <li class="list-group-item border-bottom"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - REGULAMENTO</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> ADS EXPERIENCE 2022 - INSCRIÇÕES</a></li>
+                {% for evento in eventos %}
+                <li class="list-group-item border-bottom">
+                  <a href="{{ evento.link_evento }}" class="text-decoration-none" target="_blank">
+                    <i class="fa-regular fa-file me-2"></i> {{ evento.nome_evento }}
+                  </a>
+                </li>
+                {% empty %}
+                <li class="list-group-item">Nenhum evento encontrado.</li>
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -63,16 +72,20 @@
           <!-- Seção ARQUIVOS -->
           <h2 class="fw-bold text-secondary mt-4 mb-3">ARQUIVOS</h2>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 25/07/2023 - Matrix curricular - Especialização em Direito Administrativo e Gestão Pública</a></li>
-            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 21/07/2022 - Edital para submissão de trabalhos - II COBPOS</a></li>
-            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> Resolução 001 CNE/CES - 06/04/2018</a></li>
-            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> 12/06/2020 - Decisão ACP-RN</a></li>
-            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REGIMENTO GERAL</a></li>
-            <li class="list-group-item border-bottom"><a href="#" target="_blank" class="text-decoration-none"><i class="fa-regular fa-file me-2"></i> REGIMENTO DOS CURSOS DE APERFEIÇOAMENTO</a></li>
-            <li class="list-group-item"><a href="#" target="_blank" class="text-decoration-none text-dark"><i class="fa-regular fa-file me-2"></i> MANUAL DO ARTIGO CIENTÍFICO</a></li>
+            {% for arquivo in arquivos %}
+            <li class="list-group-item border-bottom">
+              <a href="{{ arquivo.arquivo.url }}" class="text-decoration-none" target="_blank">
+                <i class="fa-regular fa-file me-2"></i> {{ arquivo.nome_arquivo }}
+              </a>
+            </li>
+            {% empty %}
+            <li class="list-group-item">Nenhum arquivo encontrado.</li>
+            {% endfor %}
           </ul>
-        </div><!-- Fim col-md-8 -->
 
+        </div>
+
+        <!-- COLUNA DIREITA (UTILIDADES) -->
         <div class="col-md-4">
           <section class="utilities">
             <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
@@ -89,10 +102,10 @@
               </ul>
             </div>
           </section>
-        </div><!-- Fim col-md-4 -->
+        </div>
 
-      </div><!-- Fim row -->
-    </div><!-- Fim container -->
+      </div><!-- Fim Row -->
+    </div><!-- Fim Container -->
   </section>
 </main>
-{% endblock content %}
+{% endblock %}
