@@ -9,7 +9,6 @@ class BaseView(TemplateView):
 class IndexView(TemplateView):
     template_name = 'index.html'
 
-
 class DisciplinasView(ListView):
     model = PostDisciplina
     template_name = 'disciplinas.html'
@@ -51,6 +50,11 @@ class DocumentosView(TemplateView):
 
 class ProjetosView(TemplateView):
     template_name = 'projetos.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['projetos'] = Projeto.objects.all()
+        return context
 
 class MonitoriasView(TemplateView):
     template_name = "monitorias.html"

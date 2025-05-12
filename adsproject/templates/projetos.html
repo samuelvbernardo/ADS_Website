@@ -39,27 +39,19 @@
         <label for="filter-tech">Tecnologia:</label>
         <input type="text" id="filter-tech" placeholder="Ex: Django, React" class="bg-white" />
       </section>
+      {% for projeto in projetos %}
       <main class="container mt-5">
         <div class="row mt-4">
           <div class="col-md-6">
             <div class="card border-primary shadow-sm p-3">
               <div class="card-body">
-                <h5 class="card-title text-secondary">Projeto WebLinker</h5>
-                <p class="card-text">Uma plataforma desenvolvida para compartilhamento de links e recursos educacionais.</p>
-                <a href="#" class="btn btn-white-bg-orange">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card border-primary shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title text-secondary">Kitanda Delivery</h5>
-                <p class="card-text">Aplicativo focado em vendas locais, desenvolvido pela
-                  coordenação para fortalecer a comunidade.</p>
+                <h5 class="card-title text-secondary">{{ projeto.nome_projeto }}</h5>
+                <p class="card-text"> {{ projeto.descricao_projeto }}</p>
                 <a href="#" class="btn btn-white-bg-orange">Saiba mais</a>
               </div>
             </div>
           </div>
         </div>
       </main>
+      {% endfor %}
       {% endblock content %}
