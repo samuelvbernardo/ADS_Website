@@ -35,7 +35,17 @@
               {% for disciplina in disciplinas %}
               {% if disciplina.periodo == periodo %}
               <div class="col">
-                <div class="card shadow-sm border-0">
+                <div class="card shadow-sm border-0 disciplina-card" 
+                     data-bs-toggle="modal" 
+                     data-bs-target="#disciplinaModal"
+                     data-disciplina-nome="{{ disciplina.nome_disciplina }}"
+                     data-professor-nome="{{ disciplina.nome_professor }}"
+                     data-professor-img="{{ disciplina.img_professor.url }}"
+                     data-descricao="{{ disciplina.descricao|default:'Descrição não disponível' }}"
+                     data-carga="{{ disciplina.carga_horaria|default:'Não informada' }}"
+                     data-periodo="{{ disciplina.periodo }}"
+                     data-tipo="{{ disciplina.tipo|default:'Regular' }}"
+                     data-ementa="{% if disciplina.ementa %}{{ disciplina.ementa.url }}{% endif %}">
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col-sm-2">
@@ -80,5 +90,52 @@
       </div><!-- /.row -->
     </div><!-- /.container -->
   </section>
+
+  <!-- Modal para detalhes da disciplina -->
+  <div class="modal fade" id="disciplinaModal" tabindex="-1" aria-labelledby="disciplinaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="disciplinaModalLabel">Detalhes da Disciplina</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img id="modal-professor-img" src="" alt="Professor" class="img-fluid rounded mb-3 professor-modal-img">
+              <h5 id="modal-professor-nome" class="fw-bold"></h5>
+            </div>
+            <div class="col-md-8">
+              <h4 id="modal-disciplina-nome" class="fw-bold text-primary mb-3"></h4>
+              <p id="modal-disciplina-descricao" class="mb-4"></p>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>Carga Horária:</strong> <span id="modal-disciplina-carga"></span> horas</p>
+                  <p><strong>Período:</strong> <span id="modal-disciplina-periodo"></span></p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Tipo:</strong> <span id="modal-disciplina-tipo"></span></p>
+                  <p id="ementa-container" style="display: none;">
+                    <strong>Ementa:</strong> 
+                    <a id="modal-disciplina-ementa" href="#" target="_blank" class="text-decoration-none">
+                      <i class="fas fa-file-pdf text-danger"></i> Baixar ementa
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/disciplinas.js' %}"></script>
 {% endblock %}
