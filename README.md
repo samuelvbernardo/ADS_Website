@@ -85,4 +85,4 @@ Fique à vontade para sugerir melhorias ou reportar bugs abrindo uma issue ou en
 
 Autores: Guilherme Medeiros da Silva , Carlos Daniel , Gabriel de Oliveira Silva ,Pâmella Maria , Pedro Henrique de Lucema
 
-Projeto desenvolvido para fins acadêmicos - Curso de Análise e Desenvolvimento de Sistemas.
+Projeto desenvolvido para o Curso de Análise e Desenvolvimento de Sistemas da Unifip.
