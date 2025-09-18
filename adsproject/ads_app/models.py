@@ -3,11 +3,22 @@ from django.utils.html import strip_tags
 
 # Create your models here.
 class PostDisciplina(models.Model):
+    TIPO_CHOICES = [
+        ('REG', 'Regular'),
+        ('OPT', 'Optativa'),
+        ('ELE', 'Eletiva'),
+        ('COM', 'Complementar'),
+    ]
+
     id = models.AutoField(primary_key=True)
     nome_professor = models.CharField(max_length=100)
     nome_disciplina = models.CharField(max_length=100)
     img_professor = models.FileField(upload_to='professores/')
     periodo = models.IntegerField()
+    descricao = models.TextField(blank=True, null=True)
+    carga_horaria = models.IntegerField(blank=True, null=True)
+    tipo = models.CharField(max_length=3, choices=TIPO_CHOICES, default="REG")
+    ementa = models.FileField(upload_to='ementas/', blank=True, null=True)
 
     def __str__(self):
         return self.nome_professor + ' - ' + self.nome_disciplina
