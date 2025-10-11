@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block title %}Disciplinas | ADS{% endblock %}
 
 {% block extra_css %}
@@ -35,21 +36,25 @@
               {% for disciplina in disciplinas %}
               {% if disciplina.periodo == periodo %}
               <div class="col">
-                <div class="card shadow-sm border-0 disciplina-card" 
-                     data-bs-toggle="modal" 
-                     data-bs-target="#disciplinaModal"
-                     data-disciplina-nome="{{ disciplina.nome_disciplina }}"
-                     data-professor-nome="{{ disciplina.nome_professor }}"
-                     data-professor-img="{{ disciplina.img_professor.url }}"
-                     data-descricao="{{ disciplina.descricao|default:'Descrição não disponível' }}"
-                     data-carga="{{ disciplina.carga_horaria|default:'Não informada' }}"
-                     data-periodo="{{ disciplina.periodo }}"
-                     data-tipo="{{ disciplina.tipo|default:'Regular' }}"
-                     data-ementa="{% if disciplina.ementa %}{{ disciplina.ementa.url }}{% endif %}">
+                <div class="card shadow-sm border-0 disciplina-card" data-bs-toggle="modal"
+                  data-bs-target="#disciplinaModal" data-disciplina-nome="{{ disciplina.nome_disciplina|escapejs }}"
+                  data-professor-nome="{{ disciplina.nome_professor|escapejs }}"
+                  data-professor-img="{% if disciplina.img_professor %}{{ disciplina.img_professor.url }}{% else %}{% static 'assets/teacher/sem-foto.png' %}{% endif %}"
+                  data-descricao="{{ disciplina.descricao|default:'Descrição não disponível'|escapejs }}"
+                  data-carga="{{ disciplina.carga_horaria|default:'Não informada' }}"
+                  data-periodo="{{ disciplina.periodo }}"
+                  data-tipo="{{ disciplina.get_tipo_display|default:disciplina.tipo }}"
+                  data-ementa="{% if disciplina.ementa %}{{ disciplina.ementa.url }}{% endif %}">
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col-sm-2">
-                        <img src="{{ disciplina.img_professor.url }}" alt="{{ disciplina.nome_professor }}" class="subject-img rounded" />
+                        {% if disciplina.img_professor %}
+                        <img src="{{ disciplina.img_professor.url }}" alt="{{ disciplina.nome_professor }}"
+                          class="subject-img rounded" />
+                        {% else %}
+                        <img src="{% static 'assets/teacher/sem-foto.png' %}" alt="Sem foto"
+                          class="subject-img rounded" />
+                        {% endif %}
                       </div>
                       <div class="col-sm-6">
                         <div class="fw-semibold">{{ disciplina.nome_disciplina }}</div>
@@ -74,14 +79,22 @@
             <h1 class="fw-bold mb-3 text-primary">UTILIDADES</h1>
             <div class="card border-0 shadow-sm">
               <ul class="list-group list-group-flush text-center">
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a>
+                </li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA
+                    COOPEX</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a>
+                </li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a>
+                </li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE
+                    CONOSCO</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a>
+                </li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA
+                    ACADÊMICA</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO
+                    ACADÊMICO</a></li>
               </ul>
             </div>
           </section>
@@ -108,16 +121,16 @@
             <div class="col-md-8">
               <h4 id="modal-disciplina-nome" class="fw-bold text-primary mb-3"></h4>
               <p id="modal-disciplina-descricao" class="mb-4"></p>
-              
+
               <div class="row">
                 <div class="col-md-6">
-                  <p><strong>Carga Horária:</strong> <span id="modal-disciplina-carga"></span> horas</p>
+                  <p><strong>Carga Horária:</strong> <span id="modal-disciplina-carga"></span></p>
                   <p><strong>Período:</strong> <span id="modal-disciplina-periodo"></span></p>
                 </div>
                 <div class="col-md-6">
                   <p><strong>Tipo:</strong> <span id="modal-disciplina-tipo"></span></p>
                   <p id="ementa-container" style="display: none;">
-                    <strong>Ementa:</strong> 
+                    <strong>Ementa:</strong>
                     <a id="modal-disciplina-ementa" href="#" target="_blank" class="text-decoration-none">
                       <i class="fas fa-file-pdf text-danger"></i> Baixar ementa
                     </a>
