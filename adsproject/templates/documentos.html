@@ -26,62 +26,34 @@
           <!-- Título principal -->
           <h1 class="fw-bold text-primary mb-4">DOCUMENTOS IMPORTANTES</h1>
 
-          <!-- Subtítulo das pastas -->
-          <h2 class="text-secondary fw-bold mb-3">PASTAS DE ARQUIVOS</h2>
-
-          <!-- Pasta REQUERIMENTOS -->
+          <!-- Pasta DOCUMENTOS DE MATRÍCULA -->
           <div class="mb-3">
-            <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-requirements">
-              <i class="fa-regular fa-folder me-2"></i> REQUERIMENTOS
+            <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-matricula">
+              <i class="fa-regular fa-folder me-2"></i> DOCUMENTOS DE MATRÍCULA
             </button>
-            <div id="documents-requirements" class="collapse mt-2 p-2 border rounded bg-white">
+            <div id="documents-matricula" class="collapse show mt-2 p-2 border rounded bg-white">
               <ul class="list-group list-group-flush">
-                {% for requerimento in requerimentos %}
+
+                <!-- PDF fixo -->
                 <li class="list-group-item border-bottom">
-                  <a href="{{ requerimento.arquivo.url }}" class="text-decoration-none" target="_blank">
-                    <i class="fa-regular fa-file me-2"></i> {{ requerimento.nome_arquivo }}
+                  <a href="{% static 'pdf/matricula.pdf' %}" class="text-decoration-none" target="_blank">
+                    <i class="fa-regular fa-file me-2"></i> Documentos de Matrícula
+                  </a>
+                </li>
+
+                <!-- Demais documentos vindos do banco -->
+                {% for doc in documentos_matricula %}
+                <li class="list-group-item border-bottom">
+                  <a href="{{ doc.arquivo.url }}" class="text-decoration-none" target="_blank">
+                    <i class="fa-regular fa-file me-2"></i> {{ doc.nome_arquivo }}
                   </a>
                 </li>
                 {% empty %}
-                <li class="list-group-item">Nenhum requerimento encontrado.</li>
+                <li class="list-group-item">Nenhum documento encontrado.</li>
                 {% endfor %}
               </ul>
             </div>
           </div>
-
-          <!-- Pasta EVENTOS -->
-          <div class="mb-3">
-            <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-events">
-              <i class="fa-regular fa-folder me-2"></i> EVENTOS
-            </button>
-            <div id="documents-events" class="collapse mt-2 p-2 border rounded bg-white">
-              <ul class="list-group list-group-flush">
-                {% for evento in eventos %}
-                <li class="list-group-item border-bottom">
-                  <a href="{{ evento.link_evento }}" class="text-decoration-none" target="_blank">
-                    <i class="fa-regular fa-file me-2"></i> {{ evento.nome_evento }}
-                  </a>
-                </li>
-                {% empty %}
-                <li class="list-group-item">Nenhum evento encontrado.</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-
-          <!-- Seção ARQUIVOS -->
-          <h2 class="fw-bold text-secondary mt-4 mb-3">ARQUIVOS</h2>
-          <ul class="list-group list-group-flush">
-            {% for arquivo in arquivos %}
-            <li class="list-group-item border-bottom">
-              <a href="{{ arquivo.arquivo.url }}" class="text-decoration-none" target="_blank">
-                <i class="fa-regular fa-file me-2"></i> {{ arquivo.nome_arquivo }}
-              </a>
-            </li>
-            {% empty %}
-            <li class="list-group-item">Nenhum arquivo encontrado.</li>
-            {% endfor %}
-          </ul>
 
         </div>
 
