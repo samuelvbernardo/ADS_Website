@@ -43,10 +43,21 @@ class DocumentosView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        # Tenta pegar o documento fixo (exemplo: nome contendo 'matrícula')
+        matricula_doc = Documentacao.objects.filter(nome_arquivo__icontains='matrícula').first()
+
+        # Busca documentos do tipo 'Arquivo'
+        documentos = Documentacao.objects.filter(tipo='Arquivo')
+        if matricula_doc:
+            # Exclui o documento fixo da lista para evitar duplicidade
+            documentos = documentos.exclude(id=matricula_doc.id)
+
         context['eventos'] = Evento.objects.all()
-        context['requerimentos'] = Documentacao.objects.filter(tipo='Requerimento')
-        context['arquivos'] = Documentacao.objects.filter(tipo='Arquivo')
+        context['matricula_fixa'] = matricula_doc
+        context['documentos_matricula'] = documentos
         return context
+
 
 class ProjetosView(TemplateView):
     template_name = 'projetos.html'

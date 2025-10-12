@@ -34,14 +34,16 @@
             <div id="documents-matricula" class="collapse show mt-2 p-2 border rounded bg-white">
               <ul class="list-group list-group-flush">
 
-                <!-- PDF fixo -->
+                <!-- PDF matrícula do banco de dados -->
+                {% if matricula_fixa %}
                 <li class="list-group-item border-bottom">
-                  <a href="{% static 'pdf/matricula.pdf' %}" class="text-decoration-none" target="_blank">
-                    <i class="fa-regular fa-file me-2"></i> Documentos de Matrícula
+                  <a href="{{ matricula_fixa.arquivo.url }}" class="text-decoration-none" target="_blank">
+                    <i class="fa-regular fa-file me-2"></i> {{ matricula_fixa.nome_arquivo }}
                   </a>
                 </li>
+                {% endif %}
 
-                <!-- Demais documentos vindos do banco -->
+                <!-- Documentos cadastrados no banco -->
                 {% for doc in documentos_matricula %}
                 <li class="list-group-item border-bottom">
                   <a href="{{ doc.arquivo.url }}" class="text-decoration-none" target="_blank">
@@ -49,7 +51,7 @@
                   </a>
                 </li>
                 {% empty %}
-                <li class="list-group-item">Nenhum documento encontrado.</li>
+                <li class="list-group-item">Nenhum documento cadastrado.</li>
                 {% endfor %}
               </ul>
             </div>
