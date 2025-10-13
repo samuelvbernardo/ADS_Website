@@ -26,23 +26,14 @@
           <!-- Título principal -->
           <h1 class="fw-bold text-primary mb-4">DOCUMENTOS IMPORTANTES</h1>
 
-          <!-- Pasta DOCUMENTOS DE MATRÍCULA -->
-          <div class="mb-3">
+          <!-- DOCUMENTOS DE MATRÍCULA -->
+          <div class="mb-4">
             <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-matricula">
               <i class="fa-regular fa-folder me-2"></i> DOCUMENTOS DE MATRÍCULA
             </button>
             <div id="documents-matricula" class="collapse show mt-2 p-2 border rounded bg-white">
               <ul class="list-group list-group-flush">
-
-                <!-- PDF fixo -->
-                <li class="list-group-item border-bottom">
-                  <a href="{% static 'pdf/matricula.pdf' %}" class="text-decoration-none" target="_blank">
-                    <i class="fa-regular fa-file me-2"></i> Documentos de Matrícula
-                  </a>
-                </li>
-
-                <!-- Demais documentos vindos do banco -->
-                {% for doc in documentos_matricula %}
+                {% for doc in arquivos %}
                 <li class="list-group-item border-bottom">
                   <a href="{{ doc.arquivo.url }}" class="text-decoration-none" target="_blank">
                     <i class="fa-regular fa-file me-2"></i> {{ doc.nome_arquivo }}
