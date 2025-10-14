@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="{% static 'css/boostrap.min.css' %}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-XxCtbpMTxXWqE+e6Z9J7dZ+Nk/IVTyYYAvAZ9xrzjIP2gCq5OYMi+65sLsVA1Uq/3FakA0+YSpc8Yjv5Ckh+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-XxCtbpMTxXWqE+e6Z9J7dZ+Nk/IVTyYYAvAZ9xrzjIP2gCq5OYMi+65sLsVA1Uq/3FakA0+YSpc8Yjv5Ckh+Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   {% block extra_css %}{% endblock %}
 
 </head>
@@ -27,21 +29,28 @@
           </a>
 
           <!--Redes Sociais-->
-          <ul class="navbar-nav bg-white flex-row gap-4 me-lg-4 d-flex align-items-center d-none d-sm-flex btn-list-orange">
+          <ul
+            class="navbar-nav bg-white flex-row gap-4 me-lg-4 d-flex align-items-center d-none d-sm-flex btn-list-orange">
             <li class="nav-item">
-              <i class="bi bi-facebook btn-facebook fs-5"></i>
+
             </li>
             <li class="nav-item">
-              <i class="bi bi-twitter-x btn-twitter-x fs-5"></i>
+
             </li>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/analisedesistemasunifip/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-gray me-2">
+              <i class="bi bi-instagram"></i>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@coordenacaoads-unifip537/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-gray me-2">
+              <i class="bi bi-youtube"></i>
+            </a>
+
             <li class="nav-item">
-              <i class="bi bi-instagram btn-instagram fs-5"></i>
-            </li>
-            <li class="nav-item">
-              <i class="bi bi-youtube btn-youtube fs-5"></i>
-            </li>
-            <li class="nav-item">
-              <i class="bi bi-discord btn-discord fs-5"></i>
+
             </li>
           </ul>
 
@@ -52,7 +61,9 @@
             </button>
 
             <!--sandwich button nav-->
-            <button class="navbar-toggler btn-gray d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavContent" aria-controls="navbarNavContent" aria-expanded="false" aria-label="Alternar navegação">
+            <button class="navbar-toggler btn-gray d-lg-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavContent" aria-controls="navbarNavContent" aria-expanded="false"
+              aria-label="Alternar navegação">
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
@@ -103,7 +114,8 @@
       <div class="row text-center text-lg-start justify-content-center">
         <!-- Redes Sociais -->
         <div class="col-12 col-lg-3 mb-4">
-          <a class="navbar-brand d-flex align-items-center justify-content-center justify-content-lg-start mb-3" href="index.html">
+          <a class="navbar-brand d-flex align-items-center justify-content-center justify-content-lg-start mb-3"
+            href="index.html">
             <img src="{% static 'assets/logo.png' %}" alt="Logo do site" class="img-fluid logo">
             <span class="fw-bold fs-4 ms-1">ADS</span>
           </a>
@@ -111,10 +123,20 @@
           <p class="text-gray">Quer conhecer mais sobre nosso cotidiano? Acesse nossas redes sociais.</p>
 
           <ul class="list-unstyled d-flex justify-content-center justify-content-lg-start btn-list-white-bg-orange">
-            <li class="btn btn-gray me-2"><i class="bi bi-facebook"></i></li>
-            <li class="btn btn-gray me-2"><i class="bi bi-twitter-x"></i></li>
-            <li class="btn btn-gray me-2"><i class="bi bi-instagram"></i></li>
-            <li class="btn btn-gray"><i class="bi bi-linkedin"></i></li>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/analisedesistemasunifip/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-gray me-2">
+              <i class="bi bi-instagram"></i>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@coordenacaoads-unifip537/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-gray me-2">
+              <i class="bi bi-youtube"></i>
+            </a>
+
+
           </ul>
         </div>
 
@@ -133,12 +155,12 @@
         <div class="col-12 col-lg-3 mb-4">
           <h4 class="mb-3 fw-bold">Links</h4>
           <ul class="list-unstyled d-flex flex-column gap-3 links-list-orange">
-            <li><i class="bi bi-arrow-right me-2"></i>Início</li>
-            <li><i class="bi bi-arrow-right me-2"></i>Extensões</li>
-            <li><i class="bi bi-arrow-right me-2"></i>Projetos</li>
-            <li><i class="bi bi-arrow-right me-2"></i>Documentação</li>
-            <li><i class="bi bi-arrow-right me-2"></i>Disciplinas</li>
-            <li><i class="bi bi-arrow-right me-2"></i>Monitorias</li>
+            <li><i class="bi bi-arrow-right me-2"></i><a href="{% url 'index' %}">Início</a></li>
+            <li><i class="bi bi-arrow-right me-2"></i><a href="{% url 'extensoes' %}">Extensões</a></li>
+            <li><i class="bi bi-arrow-right me-2"></i><a href="{% url 'projetos' %}">Projetos</a></li>
+            <li><i class="bi bi-arrow-right me-2"></i><a href="{% url 'documentos' %}">Documentação</a></li>
+            <li><i class="bi bi-arrow-right me-2"></i><a href="{% url 'disciplinas' %}">Disciplinas</a></li>
+            <li><i class="bi bi-arrow-right me-2"></i><a href="{% url 'monitorias' %}">Monitorias</a></li>
           </ul>
         </div>
 
@@ -163,7 +185,7 @@
   <script src="{% static 'js/bootstrap.blunde.min.js' %}"></script>
   <script src="{% static 'js/darkMode.js' %}"></script>
   {% block extra_js %}{% endblock %}
-  
+
 </body>
 
 </html>
