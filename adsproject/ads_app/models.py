@@ -82,8 +82,23 @@ class Extensao(models.Model):
         return f"{self.nome_extensao} - {self.professor}"
 
 class Projeto(models.Model):
+    TIPO_PARCERIA_CHOICES = [
+        ('Parceria com Alunos', 'Parceria com Alunos'),
+        ('Coordenação', 'Coordenação'),
+        ('Empresa', 'Empresa'),
+        ('Outro', 'Outro'),
+    ]
+    
     nome_projeto = models.CharField(max_length=200)
     descricao_projeto = models.TextField()
+    img_projeto = models.FileField(upload_to='projetos/', blank=True, null=True)
+    ano = models.IntegerField(blank=True, null=True)
+    tipo_parceria = models.CharField(max_length=50, choices=TIPO_PARCERIA_CHOICES, blank=True, null=True)
+    tecnologia = models.CharField(max_length=200, blank=True, null=True)
+    equipe = models.TextField(blank=True, null=True, help_text="Membros da equipe e suas funções (um por linha)")
+    repositorio_url = models.URLField(max_length=300, blank=True, null=True, help_text="Link do repositório GitHub")
+    periodo_desenvolvimento = models.CharField(max_length=100, blank=True, null=True, help_text="Ex: Março a Junho de 2025")
+    descricao_ampliada = models.TextField(blank=True, null=True, help_text="Descrição detalhada do projeto")
 
     def __str__(self):
         return self.nome_projeto

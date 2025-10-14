@@ -8,7 +8,7 @@
 
 /* Estilos gerais */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   color: var(--bs-primary);
@@ -155,15 +155,21 @@ body {
 
 .filter-section {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1rem;
   margin-bottom: 2rem;
   justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow-x: auto;
 }
 
 .filter-section label {
   font-weight: bold;
   color: var(--bs-primary);
+  white-space: nowrap;
 }
 
 .filter-section select,
@@ -180,6 +186,12 @@ body {
 .filter-section input:focus {
   outline: none;
   border-color: var(--bs-secondary);
+}
+
+.filter-section select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 /* Cards de projetos */
@@ -205,19 +217,6 @@ body {
 .card-text {
   color: var(--bs-primary);
   margin-bottom: 1.5rem;
-}
-
-.btn-white-bg-orange {
-  background-color: #fff;
-  color: var(--bs-primary);
-  border: 1px solid var(--bs-primary);
-  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-}
-
-.btn-white-bg-orange:hover {
-  background-color: var(--bs-secondary);
-  color: #fff;
-  border-color: var(--bs-secondary);
 }
 
 /* Footer */
@@ -311,6 +310,61 @@ footer form button:hover {
   }
 }
 
+/* Paginação */
+.pagination {
+  margin-top: 2rem;
+}
+
+.pagination .page-link {
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border-radius: 4px;
+  transition: all var(--transition-speed) ease;
+}
+
+.pagination .page-link:hover {
+  background-color: var(--bs-secondary);
+  color: #fff;
+  border-color: var(--bs-secondary);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  border-color: #dee2e6;
+  background-color: #fff;
+  cursor: not-allowed;
+}
+
+[data-bs-theme="dark"] .pagination .page-link {
+  background-color: #1b1e1f;
+  color: #fff;
+  border-color: #2c2f31;
+}
+
+[data-bs-theme="dark"] .pagination .page-link:hover {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+}
+
+[data-bs-theme="dark"] .pagination .page-item.active .page-link {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+}
+
+[data-bs-theme="dark"] .pagination .page-item.disabled .page-link {
+  background-color: #1b1e1f;
+  color: #6c757d;
+  border-color: #2c2f31;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .projects header h1 {
@@ -318,8 +372,8 @@ footer form button:hover {
   }
 
   .filter-section {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
   .filter-section select,
@@ -331,4 +385,73 @@ footer form button:hover {
   .card {
     margin-bottom: 1.5rem;
   }
+}
+
+/* Adicionando estilos para o modal de detalhes do projeto */
+.modal-content {
+  border-radius: 8px;
+  border: 1px solid var(--bs-primary);
+}
+
+.modal-header {
+  background-color: var(--bs-primary);
+  color: #fff;
+  border-bottom: 2px solid var(--bs-secondary);
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.projeto-detalhes h3 {
+  color: var(--bs-primary);
+  margin-bottom: 1.5rem;
+}
+
+.projeto-detalhes h5 {
+  color: var(--bs-secondary);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.projeto-detalhes ul {
+  padding-left: 1rem;
+}
+
+.projeto-detalhes ul li {
+  margin-bottom: 0.5rem;
+  color: var(--bs-primary);
+}
+
+.projeto-detalhes img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modo escuro para o modal */
+[data-bs-theme="dark"] .modal-content {
+  background-color: #1b1e1f;
+  border-color: #2c2f31;
+}
+
+[data-bs-theme="dark"] .modal-header {
+  background-color: #2c2f31;
+  border-bottom-color: var(--bs-secondary);
+}
+
+[data-bs-theme="dark"] .projeto-detalhes h3,
+[data-bs-theme="dark"] .projeto-detalhes ul li,
+[data-bs-theme="dark"] .projeto-detalhes p {
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .projeto-detalhes h5 {
+  color: var(--bs-secondary);
 }

@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import *
 from .models import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+
+
 
 # Create your views here.
 class BaseView(TemplateView):
@@ -53,8 +58,64 @@ class ProjetosView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['projetos'] = Projeto.objects.all()
+        
+        projetos = Projeto.objects.all()
+        
+        nome = self.request.GET.get('nome')
+        if nome:
+            projetos = projetos.filter(nome_projeto__icontains=nome)
+        
+        # Filtrar por ano
+        ano = self.request.GET.get('ano')
+        if ano:
+            projetos = projetos.filter(ano=ano)
+        
+        # Filtrar por tipo de parceria
+        tipo_parceria = self.request.GET.get('tipo_parceria')
+        if tipo_parceria:
+            projetos = projetos.filter(tipo_parceria=tipo_parceria)
+        
+        # Filtrar por tecnologia (busca parcial)
+        tecnologia = self.request.GET.get('tecnologia')
+        if tecnologia:
+            projetos = projetos.filter(tecnologia__icontains=tecnologia)
+        
+        paginator = Paginator(projetos, 4)
+        page = self.request.GET.get('page', 1)
+        
+        try:
+            projetos_paginados = paginator.page(page)
+        except PageNotAnInteger:
+            projetos_paginados = paginator.page(1)
+        except EmptyPage:
+            projetos_paginados = paginator.page(paginator.num_pages)
+        
+        context['projetos'] = projetos_paginados
+        context['page_obj'] = projetos_paginados
+        
+        context['anos_disponiveis'] = Projeto.objects.exclude(ano__isnull=True).values_list('ano', flat=True).distinct().order_by('-ano')
+        context['tipos_parceria'] = Projeto.TIPO_PARCERIA_CHOICES
+        
         return context
+
+def projeto_detalhes(request, projeto_id):
+    projeto = get_object_or_404(Projeto, id=projeto_id)
+    
+    data = {
+        'id': projeto.id,
+        'nome_projeto': projeto.nome_projeto,
+        'descricao_projeto': projeto.descricao_projeto,
+        'img_projeto': projeto.img_projeto.url if projeto.img_projeto else None,
+        'ano': projeto.ano,
+        'tipo_parceria': projeto.get_tipo_parceria_display() if projeto.tipo_parceria else None,
+        'tecnologia': projeto.tecnologia,
+        'equipe': projeto.equipe,
+        'repositorio_url': projeto.repositorio_url,
+        'periodo_desenvolvimento': projeto.periodo_desenvolvimento,
+        'descricao_ampliada': projeto.descricao_ampliada,
+    }
+    
+    return JsonResponse(data)
 
 class MonitoriasView(TemplateView):
     template_name = "monitorias.html"
