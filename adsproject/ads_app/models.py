@@ -9,7 +9,6 @@ class PostDisciplina(models.Model):
         ('ELE', 'Eletiva'),
         ('COM', 'Complementar'),
     ]
-
     id = models.AutoField(primary_key=True)
     nome_professor = models.CharField(max_length=100)
     nome_disciplina = models.CharField(max_length=100)
