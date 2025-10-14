@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Projetos | ADS{% endblock %}
+{% block title %}
+Projetos | ADS
+{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/projetos.css' %}">
@@ -18,40 +20,244 @@
 <section class="container">
   <section class="container-left">
     <section class="projects">
-      <header>
-      </header>
 
-      <section class="filter-section d-flex align-items-center">
-        <label for="filter-year">Ano:</label>
-        <select id="filter-year" class="bg-white">
-          <option value="">Todos</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-        </select>
+      <!-- FILTROS -->
+      <form method="get" action="{% url 'projetos' %}" class="filter-section" id="filter-form">
+        <div class="d-flex align-items-center mb-2">
+          <label for="filter-name" class="me-2">Nome:</label>
+          <input type="text" id="filter-name" name="nome" placeholder="Buscar projeto" class="bg-white form-control"
+            value="{{ request.GET.nome }}" style="min-width: 200px;" />
+        </div>
 
-        <label for="filter-type">Tipo de Parceria:</label>
-        <select id="filter-type" class="bg-white">
-          <option value="">Todos</option>
-          <option value="parceria">Parceria com Alunos</option>
-          <option value="coordenacao">Coordenação</option>
-        </select>
+        <div class="d-flex align-items-center mb-2">
+          <label for="filter-year" class="me-2">Ano:</label>
+          <select id="filter-year" name="ano" class="bg-white form-select" style="min-width: 120px;">
+            <option value="">Todos</option>
+            {% for ano in anos_disponiveis %}
+            <option value="{{ ano }}" {% if request.GET.ano == ano|stringformat:"s" %}selected{% endif %}>{{ ano }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
 
-        <label for="filter-tech">Tecnologia:</label>
-        <input type="text" id="filter-tech" placeholder="Ex: Django, React" class="bg-white" />
-      </section>
-      {% for projeto in projetos %}
-      <main class="container mt-5">
+        <div class="d-flex align-items-center mb-2">
+          <label for="filter-type" class="me-2">Tipo de Parceria:</label>
+          <select id="filter-type" name="tipo_parceria" class="bg-white form-select" style="min-width: 150px;">
+            <option value="">Todos</option>
+            {% for tipo_value, tipo_label in tipos_parceria %}
+            <option value="{{ tipo_value }}" {% if request.GET.tipo_parceria == tipo_value %}selected{% endif %}>
+              {{ tipo_label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="d-flex align-items-center mb-2">
+          <label for="filter-tech" class="me-2">Tecnologia:</label>
+          <input type="text" id="filter-tech" name="tecnologia" placeholder="Ex: Django, React"
+            class="bg-white form-control" value="{{ request.GET.tecnologia }}" style="min-width: 180px;" />
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Filtrar</button>
+        <a href="{% url 'projetos' %}" class="btn btn-secondary" id="clear-btn">Limpar</a>
+      </form>
+
+      <!-- LISTA DE PROJETOS -->
+      <main class="container mt-5" id="projects-container">
         <div class="row mt-4">
-          <div class="col-md-6">
-            <div class="card border-primary shadow-sm p-3">
+          {% for projeto in projetos %}
+          <div class="col-md-6 mb-4">
+            <div class="card border-primary shadow-sm h-100">
+              {% if projeto.img_projeto %}
+              <img src="{{ projeto.img_projeto.url }}" class="card-img-top" alt="{{ projeto.nome_projeto }}"
+                style="height: 250px; object-fit: cover;">
+              {% else %}
+              <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center"
+                style="height: 250px;">
+                <span class="text-white">Sem imagem</span>
+              </div>
+              {% endif %}
               <div class="card-body">
                 <h5 class="card-title text-secondary">{{ projeto.nome_projeto }}</h5>
-                <p class="card-text"> {{ projeto.descricao_projeto }}</p>
-                <a href="#" class="btn btn-white-bg-orange">Saiba mais</a>
+                <div class="mb-2">
+                  {% if projeto.ano %}<span class="badge bg-info me-1">{{ projeto.ano }}</span>{% endif %}
+                  {% if projeto.tipo_parceria %}<span class="badge bg-success me-1">{{ projeto.get_tipo_parceria_display }}</span>{% endif %}
+                  {% if projeto.tecnologia %}<span class="badge bg-warning text-dark">{{ projeto.tecnologia }}</span>{% endif %}
+                </div>
+                <p class="card-text">{{ projeto.descricao_projeto|truncatechars:80 }}</p>
+                <button class="btn btn-white-bg-orange btn-saiba-mais"
+                  data-projeto-id="{{ projeto.id }}">Saiba mais</button>
               </div>
             </div>
           </div>
+          {% empty %}
+          <div class="col-12 text-center py-5">
+            <p class="text-muted">Nenhum projeto encontrado com os filtros selecionados.</p>
+          </div>
+          {% endfor %}
         </div>
+
+        <!-- PAGINAÇÃO -->
+        {% if page_obj.has_other_pages %}
+        <nav aria-label="Navegação de páginas" class="mt-4">
+          <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page_obj.previous_page_number }}">Anterior</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ num }}">{{ num }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page_obj.next_page_number }}">Próximo</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">Próximo</span></li>
+            {% endif %}
+          </ul>
+        </nav>
+        {% endif %}
       </main>
-      {% endfor %}
-      {% endblock content %}
+
+    </section>
+  </section>
+</section>
+
+<!-- MODAL -->
+<div class="modal fade" id="projetoModal" tabindex="-1" aria-labelledby="projetoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projetoModalLabel">Detalhes do Projeto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <div class="text-center py-5">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Carregando...</span>
+          </div>
+          <p class="mt-3">Carregando detalhes do projeto...</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS AJAX -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let projetoModal = null;
+
+  function loadProjetoDetails(projetoId) {
+    if (!projetoModal) {
+      projetoModal = new bootstrap.Modal(document.getElementById('projetoModal'));
+    }
+
+    const modalBody = document.getElementById('modal-body-content');
+    modalBody.innerHTML = `
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Carregando...</span>
+        </div>
+        <p class="mt-3">Carregando detalhes do projeto...</p>
+      </div>
+    `;
+
+    projetoModal.show();
+
+    fetch(`/projetos/${projetoId}/detalhes/`)
+      .then(res => res.json())
+      .then(data => {
+        let html = `
+          ${data.img_projeto ? `<img src="${data.img_projeto}" class="img-fluid mb-3 rounded" style="max-height:300px;width:100%;object-fit:cover;">` : ''}
+          <h3 class="text-primary">${data.nome_projeto}</h3>
+          <div class="mb-3">
+            ${data.ano ? `<span class="badge bg-info me-1">${data.ano}</span>` : ''}
+            ${data.tipo_parceria ? `<span class="badge bg-success me-1">${data.tipo_parceria}</span>` : ''}
+            ${data.tecnologia ? `<span class="badge bg-warning text-dark">${data.tecnologia}</span>` : ''}
+          </div>
+          ${data.descricao_ampliada ? `<p>${data.descricao_ampliada}</p>` : `<p>${data.descricao_projeto}</p>`}
+          ${data.equipe ? `
+            <h5>Equipe:</h5>
+            <ul>
+              ${data.equipe.split(/\r?\n/).filter(m => m.trim() !== '').map(m => `<li>${m.trim()}</li>`).join('')}
+            </ul>
+          ` : ''}
+          ${data.periodo_desenvolvimento ? `<p><strong>Período:</strong> ${data.periodo_desenvolvimento}</p>` : ''}
+          ${data.repositorio_url ? `<p><a href="${data.repositorio_url}" target="_blank" class="btn btn-outline-primary">GitHub</a></p>` : ''}
+        `;
+        modalBody.innerHTML = html;
+      })
+      .catch(err => {
+        modalBody.innerHTML = `<div class="alert alert-danger">Erro ao carregar detalhes do projeto.</div>`;
+        console.error(err);
+      });
+  }
+
+  // Clique nos botões "Saiba mais"
+  document.querySelectorAll('.btn-saiba-mais').forEach(btn => {
+    btn.addEventListener('click', function() {
+      loadProjetoDetails(this.dataset.projetoId);
+    });
+  });
+
+  // Filtros AJAX
+  const filterForm = document.getElementById('filter-form');
+  const projectsContainer = document.getElementById('projects-container');
+  const clearBtn = document.getElementById('clear-btn');
+
+  function loadProjects(url) {
+    fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+      .then(res => res.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newContent = doc.getElementById('projects-container');
+        if (newContent) {
+          projectsContainer.innerHTML = newContent.innerHTML;
+          // Reatribuir evento aos novos botões
+          document.querySelectorAll('.btn-saiba-mais').forEach(btn => {
+            btn.addEventListener('click', function() {
+              loadProjetoDetails(this.dataset.projetoId);
+            });
+          });
+        }
+      });
+  }
+
+  filterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const params = new URLSearchParams(new FormData(filterForm)).toString();
+    const url = filterForm.action + '?' + params;
+    history.pushState({}, '', url);
+    loadProjects(url);
+  });
+
+  clearBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    filterForm.reset();
+    history.pushState({}, '', clearBtn.href);
+    loadProjects(clearBtn.href);
+  });
+
+  window.addEventListener('popstate', () => loadProjects(window.location.href));
+});
+</script>
+{% endblock content %}

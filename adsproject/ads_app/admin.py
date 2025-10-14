@@ -34,9 +34,16 @@ class ExtensaoAdmin(admin.ModelAdmin):
 
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome_projeto')
-    list_filter = ('nome_projeto',)
-    search_fields = ('nome_projeto', 'descricao_projeto')
+    list_display = ('id', 'nome_projeto', 'ano', 'tipo_parceria', 'tecnologia')
+    list_filter = ('ano', 'tipo_parceria', 'nome_projeto')
+    search_fields = ('nome_projeto', 'descricao_projeto', 'tecnologia')
+    fields = ('nome_projeto', 'descricao_projeto', 'img_projeto', 'ano', 'tipo_parceria', 'tecnologia', 
+              'equipe', 'repositorio_url', 'periodo_desenvolvimento', 'descricao_ampliada')
+    list_display_links = ('id', 'nome_projeto')
+    list_editable = ()
+    
+    def has_change_permission(self, request, obj=None):
+        return True
 
 @admin.register(Documentacao)
 class DocumentacaoAdmin(admin.ModelAdmin):
