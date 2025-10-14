@@ -19,7 +19,7 @@ class PostDisciplina(models.Model):
     tipo = models.CharField(max_length=3, choices=TIPO_CHOICES, default="REG")
     ementa = models.FileField(upload_to='ementas/', blank=True, null=True)
 
-    def __str__(self):
+    def _str_(self):
         return self.nome_professor + ' - ' + self.nome_disciplina
 
 class PostMonitoria(models.Model):
@@ -37,7 +37,7 @@ class PostMonitoria(models.Model):
 
     descricao_resumida.short_description = "Descrição resumida"
 
-    def __str__(self):
+    def _str_(self):
         return self.titulo_monitoria
 
 class Evento(models.Model):
@@ -45,7 +45,7 @@ class Evento(models.Model):
     link_evento = models.URLField(max_length=300)
     data_evento = models.DateField(blank=True, null=True)
 
-    def __str__(self):
+    def _str_(self):
         return self.nome_evento
 class PostNoticia(models.Model):
     id = models.AutoField(primary_key=True)
@@ -63,7 +63,7 @@ class PostNoticia(models.Model):
 
     descricao_resumida.short_description = "Descrição resumida"
 
-    def __str__(self):
+    def _str_(self):
         return self.titulo_noticia
 
 class Extensao(models.Model):
@@ -77,7 +77,7 @@ class Extensao(models.Model):
     assunto = models.CharField(max_length=500)
     tipo = models.CharField(max_length=10, choices=TIPO_EXTENSAO_CHOICES, default='Atual')
 
-    def __str__(self):
+    def _str_(self):
         return f"{self.nome_extensao} - {self.professor}"
 
 class Projeto(models.Model):
@@ -99,18 +99,19 @@ class Projeto(models.Model):
     periodo_desenvolvimento = models.CharField(max_length=100, blank=True, null=True, help_text="Ex: Março a Junho de 2025")
     descricao_ampliada = models.TextField(blank=True, null=True, help_text="Descrição detalhada do projeto")
 
-    def __str__(self):
+    def _str_(self):
         return self.nome_projeto
 
 class Documentacao(models.Model):
     TIPO_DOCUMENTO_CHOICES = [
         ('Requerimento', 'Requerimento'),
         ('Arquivo', 'Arquivo'),
+        ('Prouni', 'Prouni'),
     ]
 
     nome_arquivo = models.CharField(max_length=200)
     arquivo = models.FileField(upload_to='documentacao/')
     tipo = models.CharField(max_length=20, choices=TIPO_DOCUMENTO_CHOICES, default='Arquivo')
 
-    def __str__(self):
+    def _str_(self):
         return self.nome_arquivo

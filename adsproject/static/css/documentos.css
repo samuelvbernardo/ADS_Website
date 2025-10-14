@@ -46,7 +46,7 @@
 }
 
 #documents-ingresso .btn:hover {
-  background-color: #005fed;
+  background-color: #005ae1;
 }
 
 #documents-matricula .btn {
@@ -96,8 +96,8 @@ h2.text-secondary {
 
 /* ======== Tema Escuro ======== */
 [data-bs-theme="dark"] {
-  --bs-primary: #0dcaf0;
-  --bs-secondary: #ffc107;
+  --bs-primary: #ffffff;
+  --bs-secondary: #ee7d14;
 
   body {
     background-color: #0e0e10;
