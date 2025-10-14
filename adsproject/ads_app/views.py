@@ -51,6 +51,7 @@ class DocumentosView(TemplateView):
         context['eventos'] = Evento.objects.all()
         context['requerimentos'] = Documentacao.objects.filter(tipo='Requerimento')
         context['arquivos'] = Documentacao.objects.filter(tipo='Arquivo')
+        context['prouni'] = Documentacao.objects.filter(tipo='Prouni')
         return context
 
 class ProjetosView(TemplateView):
