@@ -4,10 +4,8 @@ from django.utils.html import strip_tags
 # Create your models here.
 class PostDisciplina(models.Model):
     TIPO_CHOICES = [
-        ('REG', 'Regular'),
-        ('OPT', 'Optativa'),
-        ('ELE', 'Eletiva'),
-        ('COM', 'Complementar'),
+        ('OBR', 'Obrigatória'),
+        ('NOB', 'Não obrigatória'),
     ]
     id = models.AutoField(primary_key=True)
     nome_professor = models.CharField(max_length=100)
@@ -16,7 +14,7 @@ class PostDisciplina(models.Model):
     periodo = models.IntegerField()
     descricao = models.TextField(blank=True, null=True)
     carga_horaria = models.IntegerField(blank=True, null=True)
-    tipo = models.CharField(max_length=3, choices=TIPO_CHOICES, default="REG")
+    tipo = models.CharField(max_length=3, choices=TIPO_CHOICES, default="OBR")
     ementa = models.FileField(upload_to='ementas/', blank=True, null=True)
 
     def _str_(self):
@@ -115,3 +113,4 @@ class Documentacao(models.Model):
 
     def _str_(self):
         return self.nome_arquivo
+    
