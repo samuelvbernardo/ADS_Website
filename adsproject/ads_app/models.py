@@ -105,6 +105,7 @@ class Documentacao(models.Model):
         ('Requerimento', 'Requerimento'),
         ('Arquivo', 'Arquivo'),
         ('Prouni', 'Prouni'),
+        ('FIES', 'FIES')
     ]
 
     nome_arquivo = models.CharField(max_length=200)
