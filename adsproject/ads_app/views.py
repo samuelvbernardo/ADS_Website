@@ -52,6 +52,7 @@ class DocumentosView(TemplateView):
         context['requerimentos'] = Documentacao.objects.filter(tipo='Requerimento')
         context['arquivos'] = Documentacao.objects.filter(tipo='Arquivo')
         context['prouni'] = Documentacao.objects.filter(tipo='Prouni')
+        context['fies'] = Documentacao.objects.filter(tipo='FIES')
         return context
 
 class ProjetosView(TemplateView):

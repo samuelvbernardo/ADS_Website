@@ -45,6 +45,26 @@
             </div>
           </div>
 
+          <!-- DOCUMENTOS FIES -->
+          <div class="mb-4">
+            <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-fies">
+              <i class="fa-regular fa-folder me-2"></i> DOCUMENTOS FIES
+            </button>
+            <div id="documents-fies" class="collapse mt-2 p-2 border rounded bg-white">
+              <ul class="list-group list-group-flush">
+                {% for doc in fies %}
+                  <li class="list-group-item border-bottom">
+                    <a href="{{ doc.arquivo.url }}" class="text-decoration-none" target="_blank">
+                      <i class="fa-regular fa-file me-2"></i> {{ doc.nome_arquivo }}
+                    </a>
+                  </li>
+                {% empty %}
+                  <li class="list-group-item">Nenhum documento do FIES encontrado.</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
           <!-- REQUERIMENTOS -->
           <div class="mb-4">
             <button class="btn btn-primary w-100 text-start" data-bs-toggle="collapse" data-bs-target="#documents-requerimentos">
