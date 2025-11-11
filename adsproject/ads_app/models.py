@@ -108,11 +108,12 @@ class Documentacao(models.Model):
         ('Requerimento', 'Requerimento'),
         ('Arquivo', 'Arquivo'),
         ('Prouni', 'Prouni'),
+        ('FIES','FIES')
     ]
 
     nome_arquivo = models.CharField(max_length=200)
     arquivo = models.FileField(upload_to='documentacao/')
-    tipo = models.CharField(max_length=20, choices=TIPO_DOCUMENTO_CHOICES, default='Arquivo')
+    tipo = models.CharField(max_length=20, choices=TIPO_DOCUMENTO_CHOICES)
 
     def _str_(self):
         return self.nome_arquivo
