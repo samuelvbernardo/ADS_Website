@@ -126,3 +126,6 @@ class MonitoriasView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['monitorias'] = PostMonitoria.objects.all()
         return context
+    
+def matriz_curricular(request):
+    return render(request, 'matriz_curricular.html')
