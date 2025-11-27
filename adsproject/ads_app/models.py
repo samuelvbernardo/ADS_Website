@@ -96,9 +96,10 @@ class Projeto(models.Model):
     repositorio_url = models.URLField(max_length=300, blank=True, null=True, help_text="Link do repositório GitHub")
     periodo_desenvolvimento = models.CharField(max_length=100, blank=True, null=True, help_text="Ex: Março a Junho de 2025")
     descricao_ampliada = models.TextField(blank=True, null=True, help_text="Descrição detalhada do projeto")
+    video_url = models.URLField(max_length=300, blank=True, null=True, help_text="Link do vídeo no YouTube")
 
     def _str_(self):
-        return self.nome_projeto
+        return self.nome_projet
 
 class Documentacao(models.Model):
     TIPO_DOCUMENTO_CHOICES = [

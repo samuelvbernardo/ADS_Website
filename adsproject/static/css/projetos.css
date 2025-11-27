@@ -293,7 +293,11 @@ footer form button:hover {
     border-color: #2c2f31;
   }
 
-  .card-title,
+  /* Fixed card-title color for dark mode - changed from text-secondary (orange) to white */
+  .card-title {
+    color: #fff;
+  }
+
   .card-text {
     color: #fff;
   }
@@ -454,4 +458,21 @@ footer form button:hover {
 
 [data-bs-theme="dark"] .projeto-detalhes h5 {
   color: var(--bs-secondary);
+}
+
+/* Impede que o modo escuro altere o texto e fundos dos filtros */
+[data-bs-theme="dark"] .filter-section label,
+[data-bs-theme="dark"] .filter-section input,
+[data-bs-theme="dark"] .filter-section select {
+    color: #000 !important;
+}
+
+[data-bs-theme="dark"] .filter-section {
+    background-color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .filter-section input,
+[data-bs-theme="dark"] .filter-section select {
+    background-color: #fff !important;
+    border-color: #000 !important;
 }

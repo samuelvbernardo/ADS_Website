@@ -38,7 +38,7 @@ class ProjetoAdmin(admin.ModelAdmin):
     list_filter = ('ano', 'tipo_parceria', 'nome_projeto')
     search_fields = ('nome_projeto', 'descricao_projeto', 'tecnologia')
     fields = ('nome_projeto', 'descricao_projeto', 'img_projeto', 'ano', 'tipo_parceria', 'tecnologia', 
-              'equipe', 'repositorio_url', 'periodo_desenvolvimento', 'descricao_ampliada')
+              'equipe', 'repositorio_url', 'periodo_desenvolvimento', 'descricao_ampliada', 'video_url')
     list_display_links = ('id', 'nome_projeto')
     list_editable = ()
     

@@ -115,6 +115,7 @@ def projeto_detalhes(request, projeto_id):
         'repositorio_url': projeto.repositorio_url,
         'periodo_desenvolvimento': projeto.periodo_desenvolvimento,
         'descricao_ampliada': projeto.descricao_ampliada,
+        'video_url': projeto.video_url,
     }
     
     return JsonResponse(data)
