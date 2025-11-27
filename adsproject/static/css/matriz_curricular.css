@@ -21,11 +21,17 @@
 }
 
 /* Cards dos períodos */
+
 .periodo-card {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    border: 1px solid #333;
+    background: #fff;
+    border: 1px solid #e0e0e0;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .periodo-card {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border: 1px solid #333;
 }
 
 .periodo-card:hover {
